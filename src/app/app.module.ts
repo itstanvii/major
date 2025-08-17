@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './Feature/feature.module';
 import { LoginComponent } from './Feature/login.component';
+import { BmiCalculatorComponent } from './Feature/bmi.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -42,6 +43,10 @@ import { LoginComponent } from './Feature/login.component';
         path: 'auth',
         loadChildren: () =>
           import('./Auth/auth.module').then((m) => m.AuthModule),
+      },
+      {
+        path: 'BMI',
+        component: BmiCalculatorComponent,
       },
       {
         path: '**',

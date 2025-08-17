@@ -7,6 +7,7 @@ import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register.component';
 import { RouterModule } from '@angular/router';
+import { BmiCalculatorComponent } from './bmi.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
@@ -16,6 +17,7 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    BmiCalculatorComponent,
   ],
   providers: [],
 })
