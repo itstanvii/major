@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './Feature/feature.module';
 import { LoginComponent } from './Feature/login.component';
+import { TrainerRegister } from './Feature/TrainerRegister.component';
+import { TrainerLogin } from './Feature/trainerLogin.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -37,6 +39,14 @@ import { LoginComponent } from './Feature/login.component';
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path:'trainerRegister',
+        component:TrainerRegister,
+      },
+      {
+        path:'trainerLogin',
+        component:TrainerLogin,
       },
       {
         path: 'auth',

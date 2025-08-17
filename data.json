@@ -45,6 +45,26 @@
       "password": "1234",
       "height": "5",
       "weight": "65"
+    },
+    {
+      "id": "899d",
+      "name": "Chittosh  ",
+      "email": "chittosh@gmail.comm",
+      "password": "12345"
+    },
+    {
+      "id": "5956",
+      "name": "Chittosh",
+      "email": "chittosh@gmail.comm",
+      "password": "1234"
+    }
+  ],
+  "trainer": [
+    {
+      "id": "1689",
+      "name": "Chittosh",
+      "email": "chittosh@gmail.comm",
+      "password": "12345"
     }
   ]
 }

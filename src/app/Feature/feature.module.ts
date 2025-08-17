@@ -7,6 +7,8 @@ import { LoginComponent } from './login.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register.component';
 import { RouterModule } from '@angular/router';
+import { TrainerRegister } from './TrainerRegister.component';
+import { TrainerLogin } from './trainerLogin.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
@@ -16,6 +18,8 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
+    TrainerRegister,
+    TrainerLogin
   ],
   providers: [],
 })
