@@ -2,26 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from './login.component';
-import { UserComponent } from '../User/user.component';
-
-let routing = RouterModule.forChild([
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-
-  {
-    path: 'user/:id',
-    component: UserComponent,
-    //children: [{ path: 'user/:id', component: UserComponent }],
-  },
-  { path: '**', redirectTo: '/login' },
-]);
+import { UserComponent } from '../Feature/user.component';
 
 @NgModule({
-  imports: [CommonModule, FormsModule, routing], // Dependency Modules
+  imports: [], // Dependency Modules
   providers: [],
-  declarations: [LoginComponent],
+  declarations: [],
 })
 export class AuthModule {} // lazy loaded.

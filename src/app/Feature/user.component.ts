@@ -31,7 +31,7 @@ export class UserComponent implements OnInit {
     });
   }
   bmiCalculate() {
-    this.showbmi = true;
+    this.showbmi = !this.showbmi;
     // this.bmi = 10;
     this.bmi = this.userData.weight / this.userData.height;
   }

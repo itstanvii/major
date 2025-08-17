@@ -1,22 +1,35 @@
-import { UserComponent } from './User/user.component';
-import { RegisterComponent } from './Auth/register.component';
+import { UserComponent } from './Feature/user.component';
+import { RegisterComponent } from './Feature/register.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home.component';
+import { HomeComponent } from './Feature/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { FeatureModule } from './Feature/feature.module';
+import { LoginComponent } from './Feature/login.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, HomeComponent, UserComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    FeatureModule,
 
     RouterModule.forRoot([
+      {
+        path: 'login',
+        component: LoginComponent,
+      },
+
+      {
+        path: 'user/:id',
+        component: UserComponent,
+        //children: [{ path: 'user/:id', component: UserComponent }],
+      },
       {
         path: 'register',
         component: RegisterComponent,
