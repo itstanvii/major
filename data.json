@@ -1,0 +1,19 @@
+{
+  "user": [
+    {
+      "id": "ab2e",
+      "name": "Yash",
+      "email": "yashkawtikwar1@gmail.com",
+      "password": "1234",
+      "height": "1.67",
+      "weight": "75"
+    },
+    {
+      "id": "9ffc",
+      "name": "yash213",
+      "email": "yashkawtikw@gmail.com",
+      "height": "180",
+      "weight": "80"
+    }
+  ]
+}

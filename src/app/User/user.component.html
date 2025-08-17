@@ -1,0 +1,5 @@
+<div>Hello {{ userData?.name }}</div>
+<button (click)="bmiCalculate()">Show BMI</button>
+
+<div *ngIf="showbmi">Your BMI is {{ bmi }}</div>
+<button (click)="logout()">LogOut</button>

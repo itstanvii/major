@@ -1,18 +1,42 @@
+import { UserComponent } from './User/user.component';
+import { RegisterComponent } from './Auth/register.component';
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './home.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, RegisterComponent, HomeComponent, UserComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    HttpClientModule,
+
+    RouterModule.forRoot([
+      {
+        path: 'register',
+        component: RegisterComponent,
+      },
+      {
+        path: 'home',
+        component: HomeComponent,
+      },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('./Auth/auth.module').then((m) => m.AuthModule),
+      },
+      {
+        path: '**',
+        redirectTo: '/home',
+      },
+    ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

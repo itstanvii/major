@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  selector: 'app',
+  template: '<router-outlet/>',
 })
 export class AppComponent {
-  title = 'major-project';
+  title = 'GMS';
 }
