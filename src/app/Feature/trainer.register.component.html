@@ -1,59 +1,119 @@
 <div class="container mt-5 mb-5">
   <form
-    novalidate
     #form="ngForm"
     (ngSubmit)="save(form)"
+    novalidate
     class="p-4 bg-light rounded shadow"
   >
-    <div class="form-group">
+    <!-- Name -->
+    <div class="form-group mb-3">
       <label>Name</label>
       <input
-        type="name"
+        type="text"
         class="form-control"
         name="name"
         [(ngModel)]="trainer.name"
+        required
+        #name="ngModel"
       />
+      <div *ngIf="name.invalid && name.touched" class="text-danger">
+        Name is required.
+      </div>
     </div>
 
-    <div class="form-group">
+    <!-- Email -->
+    <div class="form-group mb-3">
       <label>Email</label>
       <input
         type="email"
         class="form-control"
         name="email"
         [(ngModel)]="trainer.email"
+        required
+        #email="ngModel"
       />
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        Valid email is required.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="specialization">Specialization</label>
+      <select
+        class="form-control"
+        name="cuisine"
+        [(ngModel)]="trainer.specialization"
+        required
+      >
+        <option value="" disabled selected>Select a cuisine</option>
+        <option value="weightGain">Weight Gain</option>
+        <option value="weightLoss">Weight Loss</option>
+      </select>
     </div>
 
-    <div class="form-group">
+    <!-- Password -->
+    <div class="form-group mb-3">
       <label>Password</label>
       <input
         type="password"
         class="form-control"
         name="password"
         [(ngModel)]="trainer.password"
+        required
+        minlength="6"
+        #password="ngModel"
       />
+      <div *ngIf="password.invalid && password.touched" class="text-danger">
+        Password is required (min 6 characters).
+      </div>
     </div>
-    <div class="form-group">
-      <label>Experience</label>
+
+    <!-- Experience -->
+    <div class="form-group mb-3">
+      <label>Experience (years)</label>
       <input
         type="number"
         class="form-control"
         name="experience"
         [(ngModel)]="trainer.experience"
+        required
+        min="0"
+        max="50"
+        #experience="ngModel"
       />
+      <div *ngIf="experience.invalid && experience.touched" class="text-danger">
+        Experience must be between 0 and 50 years.
+      </div>
     </div>
-    <div class="form-group">
-      <label>Certification</label>
+
+    <!-- Certifications -->
+    <div class="form-group mb-4">
+      <label>Certifications</label>
       <input
         type="number"
         class="form-control"
-        name="certification"
+        name="certifications"
         [(ngModel)]="trainer.certifications"
+        required
+        min="1"
+        max="10"
+        #certifications="ngModel"
       />
+      <div
+        *ngIf="certifications.invalid && certifications.touched"
+        class="text-danger"
+      >
+        Enter number of certifications (1–10).
+      </div>
     </div>
 
-    <button type="submit" class="btn btn-primary mr-2">Save</button>
+    <!-- Buttons -->
+    <button
+      type="submit"
+      class="btn btn-primary mr-2"
+      [disabled]="form.invalid"
+    >
+      Save
+    </button>
     <button type="reset" class="btn btn-secondary" routerLink="/home">
       Cancel
     </button>

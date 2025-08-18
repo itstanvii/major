@@ -27,7 +27,7 @@ export class TrainerLoginComponent {
         console.log('Login successfully ');
 
         // navigate using the trainer’s id
-        this.router.navigate(['/trainer']);
+        this.router.navigate(['/trainer', trainer.id]);
       } else {
         console.log('Invalid email or password ');
         this.message = 'Invalid email or password ';

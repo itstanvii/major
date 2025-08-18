@@ -1,58 +1,60 @@
 {
   "user": [
     {
-      "id": "58f1",
-      "name": "Yash",
+      "id": "67dc",
+      "name": "yash",
       "email": "yashkawtikwar1@gmail.com",
-      "password": "1234",
-      "role": "User",
-      "height": "1.67",
-      "weight": "75"
+      "password": "123456",
+      "category": "weightGain",
+      "height": 1.5,
+      "weight": 54
     },
     {
-      "id": "b01b",
-      "name": "Bhagat Singh",
-      "email": "bhagat@gmail.com",
-      "password": "1234",
-      "role": "Trainer",
-      "height": "1.67",
-      "weight": "80"
+      "id": "1b1b",
+      "name": "Tanvi",
+      "email": "tanvi@gmail.com",
+      "password": "123456",
+      "category": "weightGain",
+      "height": 1.4,
+      "weight": 50
     },
     {
-      "id": "37a0",
-      "name": "xyz",
-      "email": "xyz@gmail.com",
-      "password": "0987",
-      "height": "1.5",
-      "weight": "54"
+      "id": "d675",
+      "name": "Vaidehi",
+      "email": "vaidehi@gmail.com",
+      "password": "123456",
+      "category": "weightGain",
+      "height": 1.6,
+      "weight": 52
+    },
+    {
+      "id": "634a",
+      "name": "chittosh",
+      "email": "chittosh@gmail.com",
+      "password": "123456",
+      "category": "weightLoss",
+      "height": 1.76,
+      "weight": 80
     }
   ],
   "trainer": [
     {
-      "id": "1689",
-      "name": "Chittosh",
-      "email": "chittosh@gmail.comm",
-      "password": "12345"
-    },
-    {
-      "id": "9037",
+      "id": "5c42",
       "name": "Bhagat Singh",
       "email": "xyz@gmail.com",
-      "password": "1234"
+      "password": "123456",
+      "experience": 4,
+      "certifications": 2,
+      "specialization": "weightGain"
     },
     {
-      "id": "f176",
-      "name": "yash",
-      "email": "sia",
-      "password": "1234"
-    },
-    {
-      "id": "a901",
-      "name": "yash",
-      "email": "qwe",
-      "password": "123",
-      "experience": 3,
-      "certifications": 5
+      "id": "e715",
+      "name": "Mahatma Gandhi",
+      "email": "gandhi@gmail.com",
+      "password": "123456",
+      "experience": 10,
+      "certifications": 5,
+      "specialization": "weightLoss"
     }
   ]
 }

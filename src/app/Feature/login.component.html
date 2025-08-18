@@ -1,12 +1,13 @@
 <div class="container mt-5">
   <form
-    novalidate
     #form="ngForm"
     (ngSubmit)="login()"
+    novalidate
     class="bg-light p-4 rounded shadow-sm"
   >
     <h3 class="text-center mb-4 text-primary">Login to FitVerse</h3>
 
+    <!-- Email Field -->
     <div class="form-group mb-3">
       <label for="email" class="form-label">Email</label>
       <input
@@ -15,10 +16,16 @@
         name="email"
         [(ngModel)]="credientials.email"
         required
+        email
         placeholder="Enter your email"
+        #email="ngModel"
       />
+      <div *ngIf="email.invalid && email.touched" class="text-danger">
+        A valid email is required.
+      </div>
     </div>
 
+    <!-- Password Field -->
     <div class="form-group mb-4">
       <label for="password" class="form-label">Password</label>
       <input
@@ -28,16 +35,30 @@
         name="password"
         [(ngModel)]="credientials.password"
         required
+        minlength="6"
         placeholder="Enter your password"
+        #password="ngModel"
       />
+      <div *ngIf="password.invalid && password.touched" class="text-danger">
+        Password is required (min 6 characters).
+      </div>
     </div>
-    <button routerLink="/auth/adminLogin">Login As Admin</button>
 
+    <!-- Admin Login Button -->
+    <div class="mb-3 text-end">
+      <button class="btn btn-link" routerLink="/auth/adminLogin">
+        Login As Admin
+      </button>
+    </div>
+
+    <!-- Action Buttons -->
     <div class="text-center">
       <button class="btn btn-outline-secondary me-2" routerLink="/home">
         Go back
       </button>
-      <button class="btn btn-primary" type="submit">Log In</button>
+      <button class="btn btn-primary" type="submit" [disabled]="form.invalid">
+        Log In
+      </button>
     </div>
   </form>
 </div>

@@ -1,3 +1,4 @@
+import { TrainerComponent } from './trainer.component';
 import { TrainerLoginComponent } from './trainer.login.component';
 import { NgModule } from '@angular/core';
 
@@ -28,6 +29,7 @@ import { TrainerRegisterComponent } from './trainer.register.component';
     BmiCalculatorComponent,
     TrainerRegisterComponent,
     TrainerLoginComponent,
+    TrainerComponent,
   ],
   providers: [],
 })

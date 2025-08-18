@@ -36,7 +36,7 @@ import { TrainerComponent } from './Feature/trainer.component';
         //children: [{ path: 'user/:id', component: UserComponent }],
       },
       {
-        path: 'trainer',
+        path: 'trainer/:id',
         component: TrainerComponent,
         //children: [{ path: 'user/:id', component: UserComponent }],
       },

@@ -13,7 +13,13 @@ export class TrainerRegisterComponent {
 
   constructor(private router: Router, private repository: Repository) {}
   save(form: NgForm) {
-    this.repository.saveTrainers(this.trainer);
-    this.router.navigate(['/home']);
+    if (form.valid) {
+      // Save logic here (e.g., POST to json-server)
+      this.repository.saveTrainers(this.trainer);
+      this.router.navigate(['/home']);
+      console.log('Trainer saved:', this.trainer);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

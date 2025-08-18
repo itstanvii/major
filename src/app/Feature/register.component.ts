@@ -12,7 +12,13 @@ export class RegisterComponent {
   user: User = new User();
   constructor(private router: Router, private repository: Repository) {}
   save(form: NgForm) {
-    this.repository.saveUser(this.user);
-    this.router.navigate(['/home']);
+    if (form.valid) {
+      // Save logic here (e.g., POST to json-server)
+      this.repository.saveUser(this.user);
+      this.router.navigate(['/home']);
+      console.log('Trainer saved:', this.user);
+    } else {
+      console.log('Form is invalid');
+    }
   }
 }

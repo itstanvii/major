@@ -5,6 +5,7 @@ export class Trainer {
     public email?: string,
     public password?: string,
     public experience?: number,
-    public certifications?: number
+    public certifications?: number,
+    public specialization?: string
   ) {}
 }

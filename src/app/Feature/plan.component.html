@@ -14,7 +14,14 @@
         <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
       </div>
 
-      <button class="btn btn-danger rounded-pill px-3">Buy Now</button>
+      <button class="btn btn-danger rounded-pill px-3" (click)="buyPlan()">
+        Buy Now
+      </button>
+    </div>
+
+    <!-- Message displayed below the button -->
+    <div *ngIf="message" class="mt-2 text-danger text-center">
+      {{ message }}
     </div>
   </div>
 </div>
