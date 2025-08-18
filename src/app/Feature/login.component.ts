@@ -23,7 +23,11 @@ export class LoginComponent {
       if (user) {
         localStorage.setItem('logged', JSON.stringify(user));
         this.message = 'login successfully';
-        this.router.navigate(['/auth/user', user.id]);
+        this.router.navigate(['/user', user.id]);
+        // if (user.role == 'User') {
+        // } else {
+        //   this.router.navigate(['/trainer']);
+        // }
       } else {
         this.message = 'Invalid email';
       }

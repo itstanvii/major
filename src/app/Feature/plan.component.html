@@ -1,0 +1,15 @@
+<div class="card shadow-sm mb-4" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{ plan.title }}</h5>
+    <p class="card-text">{{ plan.description }}</p>
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item" *ngFor="let feature of plan.features">
+        {{ feature }}
+      </li>
+    </ul>
+    <div class="price text-success">
+      <strong>₹{{ plan.price }} / month</strong><br />
+      <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
+    </div>
+  </div>
+</div>

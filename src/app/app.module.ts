@@ -1,3 +1,5 @@
+import { BmiCalculatorComponent } from './Feature/bmi.component';
+import { AuthComponent } from './Auth/auth.component';
 import { UserComponent } from './Feature/user.component';
 import { RegisterComponent } from './Feature/register.component';
 import { RouterModule } from '@angular/router';
@@ -10,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './Feature/feature.module';
 import { LoginComponent } from './Feature/login.component';
+import { TrainerComponent } from './Feature/trainer.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,12 +34,20 @@ import { LoginComponent } from './Feature/login.component';
         //children: [{ path: 'user/:id', component: UserComponent }],
       },
       {
+        path: 'trainer',
+        component: TrainerComponent,
+      },
+      {
         path: 'register',
         component: RegisterComponent,
       },
       {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'bmiCalculator',
+        component: BmiCalculatorComponent,
       },
       {
         path: 'auth',
