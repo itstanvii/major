@@ -26,5 +26,33 @@
       "height": "1.5",
       "weight": "54"
     }
+  ],
+  "trainer": [
+    {
+      "id": "1689",
+      "name": "Chittosh",
+      "email": "chittosh@gmail.comm",
+      "password": "12345"
+    },
+    {
+      "id": "9037",
+      "name": "Bhagat Singh",
+      "email": "xyz@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "f176",
+      "name": "yash",
+      "email": "sia",
+      "password": "1234"
+    },
+    {
+      "id": "a901",
+      "name": "yash",
+      "email": "qwe",
+      "password": "123",
+      "experience": 3,
+      "certifications": 5
+    }
   ]
 }

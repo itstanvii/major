@@ -1,4 +1,4 @@
-import { TrainerComponent } from './trainer.component';
+import { TrainerLoginComponent } from './trainer.login.component';
 import { NgModule } from '@angular/core';
 
 import { UserComponent } from './user.component';
@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar.component';
 import { ViewPlansComponent } from './viewplans.component';
 import { PlanComponent } from './plan.component';
 import { BmiCalculatorComponent } from './bmi.component';
+import { TrainerRegisterComponent } from './trainer.register.component';
 
 @NgModule({
   imports: [CommonModule, FormsModule, RouterModule],
@@ -24,8 +25,9 @@ import { BmiCalculatorComponent } from './bmi.component';
     NavbarComponent,
     PlanComponent,
     ViewPlansComponent,
-    TrainerComponent,
     BmiCalculatorComponent,
+    TrainerRegisterComponent,
+    TrainerLoginComponent,
   ],
   providers: [],
 })

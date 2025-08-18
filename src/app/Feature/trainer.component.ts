@@ -1,6 +1,3 @@
-import { ActivatedRoute } from '@angular/router';
-import { User } from '../model/user.model';
-import { Repository } from './../model/repository';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,6 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: 'trainer.component.html',
 })
 export class TrainerComponent {
-  user: User[] = [];
-  constructor(private repo: Repository, private route: ActivatedRoute) {}
+  constructor() {}
 }

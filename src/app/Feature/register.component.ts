@@ -12,7 +12,7 @@ export class RegisterComponent {
   user: User = new User();
   constructor(private router: Router, private repository: Repository) {}
   save(form: NgForm) {
-    this.repository.saveProduct(this.user);
+    this.repository.saveUser(this.user);
     this.router.navigate(['/home']);
   }
 }

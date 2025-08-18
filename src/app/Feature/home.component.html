@@ -1,3 +1,50 @@
-<nav-bar />
-<app-view-plans />
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light"
+  style="background: linear-gradient(to right, #2c3e50, #bdc3c7)"
+>
+  <a class="navbar-brand" routerLink="/home" style="color: #ffffff">FitVerse</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Left-aligned links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home" style="color: #ffffff">Home</a>
+      </li>
+    </ul>
+
+    <!-- Right-aligned links -->
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login"> Login </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register"> Register </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Choose Your Plan</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let plan of plans">
+      <app-plan-card [plan]="plan"></app-plan-card>
+    </div>
+  </div>
+</div>
+
+<button (click)="trainerRegister()">Register Trainer</button>
+<button (click)="trainerLogin()">Login Trainer</button>
+
 <button routerLink="/bmiCalculator">Bmi Calculate</button>

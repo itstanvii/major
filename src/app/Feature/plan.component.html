@@ -7,9 +7,14 @@
         {{ feature }}
       </li>
     </ul>
-    <div class="price text-success">
-      <strong>₹{{ plan.price }} / month</strong><br />
-      <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div class="price text-success">
+        <strong>₹{{ plan.price }} / month</strong><br />
+        <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
+      </div>
+
+      <button class="btn btn-danger rounded-pill px-3">Buy Now</button>
     </div>
   </div>
 </div>
