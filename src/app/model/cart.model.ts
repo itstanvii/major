@@ -1,11 +1,11 @@
-
-export class Store {
+export class Cart{
   constructor(
-    public id?: number, //same
+    public id?: number,
     public itemName?: string,
     public category?: string,
     public description?: string,
     public src?: string,
-    public price?: string
-  ) {}
+    public price?: string,
+    public  userId?:string
+  ){}
 }

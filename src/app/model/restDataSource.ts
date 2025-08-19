@@ -35,7 +35,8 @@ export class RestDataSource {
   updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.baseUrl}/user/${id}`, user);
   }
-    saveProduct(product: Store): Observable<Store> {
+
+  saveProduct(product: Store): Observable<Store> {
     return this.http.post<Store>(this.baseUrl + '/items', product);
   }
 

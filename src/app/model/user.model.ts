@@ -8,6 +8,8 @@ export class User {
     public height?: string,
     public weight?: string,
     public dietPlan?: string,
-    public workoutPlan?: string
+    public workoutPlan?: string,
+    public wishlist?: string[],
+    public cart?: string[],
   ) {}
 }
