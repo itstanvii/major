@@ -1,5 +1,98 @@
-<button routerLink="/register">Register</button>
-<button routerLink="/trainerRegister">Trainer Register</button>
+<!-- Navigation Bar -->
+<nav-bar></nav-bar>
 
-<button routerLink="/login">Login</button>
-<button routerLink="/trainerLogin">Trainer Login</button>
+<!-- Hero Section with Bootstrap Overlay -->
+<section
+  class="position-relative d-flex align-items-center justify-content-center text-white text-center"
+  style="
+    background-image: url('assets/images/gymbg.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+  "
+>
+  <!-- Overlay using Bootstrap utility classes -->
+  <div
+    class="position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6)"
+  ></div>
+
+  <!-- Content on top of overlay -->
+  <div class="position-relative">
+    <h1 class="display-4 fw-bold">Welcome to FitVerse</h1>
+    <p class="lead">Your journey to fitness starts here</p>
+  </div>
+</section>
+
+<!-- Plans Section -->
+<section class="plans-section py-5">
+  <div class="container">
+    <app-view-plans></app-view-plans>
+  </div>
+</section>
+
+<section class="plans-section py-5">
+  <div class="container">
+    <button routerLink="/bmiCalculator" class="btn btn-primary">
+      BMI Calculate
+    </button>
+  </div>
+</section>
+
+<!-- <div *ngIf="func()">
+  <button (click)="trainerRegister()">Register Trainer</button>
+  <button (click)="trainerLogin()">Login Trainer</button>
+</div> -->
+
+<store-categories></store-categories>
+
+<!-- Footer Section for Trainer Hiring -->
+<footer class="bg-dark text-white pt-5 pb-4" *ngIf="func()">
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      <!-- About Section -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Join FitVerse</h5>
+        <p>
+          Are you a passionate fitness trainer looking to inspire others?
+          FitVerse is hiring! Apply now and become part of a vibrant community
+          dedicated to health and wellness.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Quick Links</h5>
+        <p>
+          <a
+            routerLink="/trainer-register"
+            class="text-white text-decoration-none"
+            >Register as Trainer</a
+          >
+        </p>
+        <!-- <p>
+          <a routerLink="/trainer-login" class="text-white text-decoration-none"
+            >Trainer Login</a
+          >
+        </p> -->
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Contact</h5>
+        <p><i class="bi bi-envelope-fill me-2"></i> careers&#64;fitverse.com</p>
+        <p><i class="bi bi-telephone-fill me-2"></i> +91 8799979578</p>
+        <p>
+          <i class="bi bi-geo-alt-fill me-2"></i> FitVerse HQ, Mumbai, India
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="row mt-4">
+      <div class="col-md-12 text-center">
+        <p class="mb-0">&copy; 2025 FitVerse. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>

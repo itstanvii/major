@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Repository } from '../model/repository';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'trainer-login',

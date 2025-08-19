@@ -1,0 +1,22 @@
+<div>Hello {{ trainerData?.name }}</div>
+
+<div>Your Speciality is {{ trainerData?.specialization }}</div>
+
+<!-- <div *ngIf="userList.length > 0">
+  <h5>Users interested in: {{ trainerData.specialization }}</h5>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of userList">
+      {{ user.name }} - {{ user.email }}
+    </li>
+  </ul>
+</div>
+
+<div *ngIf="userList.length === 0">
+  <p class="text-muted">No users found for this specialization.</p>
+</div> -->
+
+<div>{{ userList[0]?.name }}</div>
+
+<button (click)="getUsers()">Get Users</button>
+
+<button (click)="logout()">LogOut</button>
