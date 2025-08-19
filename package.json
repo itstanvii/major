@@ -19,7 +19,16 @@
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
+<<<<<<< HEAD
     "bootstrap": "^5.3.7",
+=======
+    "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "@fortawesome/fontawesome-svg-core": "^7.0.0",
+    "@fortawesome/free-solid-svg-icons": "^7.0.0",
+    "bootstrap": "^4.1.1",
+    "font-awesome": "^4.7.0",
+>>>>>>> de22ff7c0cd4addcf6c85f38f132f89d3dcc864f
     "json-server": "^1.0.0-beta.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

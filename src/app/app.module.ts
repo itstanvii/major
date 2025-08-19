@@ -1,16 +1,26 @@
-import { UserComponent } from './Feature/user.component';
-import { RegisterComponent } from './Feature/register.component';
+import { TrainerRegisterComponent } from './Trainer/trainer.register.component';
+import { BmiCalculatorComponent } from './Feature/bmi.component';
+import { UserComponent } from './User/user.component';
+import { RegisterComponent } from './User/register.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Feature/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './Feature/feature.module';
+<<<<<<< HEAD
 import { LoginComponent } from './Feature/login.component';
 import { BmiCalculatorComponent } from './Feature/bmi.component';
+=======
+import { LoginComponent } from './User/login.component';
+import { TrainerLoginComponent } from './Trainer/trainer.login.component';
+import { TrainerComponent } from './Trainer/trainer.component';
+import { UserModule } from './User/user.module';
+import { TrainerModule } from './Trainer/trainer.module';
+import { ViewProductsComponent } from './Store/viewProducts.component';
+>>>>>>> de22ff7c0cd4addcf6c85f38f132f89d3dcc864f
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,6 +29,8 @@ import { BmiCalculatorComponent } from './Feature/bmi.component';
     FormsModule,
     HttpClientModule,
     FeatureModule,
+    UserModule,
+    TrainerModule,
 
     RouterModule.forRoot([
       {
@@ -32,12 +44,38 @@ import { BmiCalculatorComponent } from './Feature/bmi.component';
         //children: [{ path: 'user/:id', component: UserComponent }],
       },
       {
+        path: 'trainer/:id',
+        component: TrainerComponent,
+        //children: [{ path: 'user/:id', component: UserComponent }],
+      },
+      {
         path: 'register',
         component: RegisterComponent,
       },
       {
+        path:'view-plans',
+        component:ViewProductsComponent,
+      },
+      {
+        path: 'trainer-register',
+        component: TrainerRegisterComponent,
+      },
+      {
+        path: 'trainer-login',
+        component: TrainerLoginComponent,
+      },
+
+      {
         path: 'home',
         component: HomeComponent,
+      },
+      {
+        path: 'payment/:title',
+        component: HomeComponent,
+      },
+      {
+        path: 'bmiCalculator',
+        component: BmiCalculatorComponent,
       },
       {
         path: 'auth',

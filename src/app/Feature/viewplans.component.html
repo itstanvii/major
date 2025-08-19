@@ -1,0 +1,8 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Choose Your Plan</h2>
+  <div class="row justify-content-center">
+    <div class="col-md-4" *ngFor="let plan of plans">
+      <app-plan-card [plan]="plan"></app-plan-card>
+    </div>
+  </div>
+</div>

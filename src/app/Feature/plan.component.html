@@ -1,0 +1,27 @@
+<div class="card shadow-sm mb-4" style="width: 18rem">
+  <div class="card-body">
+    <h5 class="card-title">{{ plan.title }}</h5>
+    <p class="card-text">{{ plan.description }}</p>
+    <ul class="list-group list-group-flush mb-3">
+      <li class="list-group-item" *ngFor="let feature of plan.features">
+        {{ feature }}
+      </li>
+    </ul>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div class="price text-success">
+        <strong>₹{{ plan.price }} / month</strong><br />
+        <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
+      </div>
+
+      <button class="btn btn-danger rounded-pill px-3" (click)="buyPlan()">
+        Buy Now
+      </button>
+    </div>
+
+    <!-- Message displayed below the button -->
+    <div *ngIf="message" class="mt-2 text-danger text-center">
+      {{ message }}
+    </div>
+  </div>
+</div>

@@ -29,14 +29,16 @@
             "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
+             "src/assets"
             ],
             "styles": [
               "src/styles.css",
+<<<<<<< HEAD
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
+=======
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/font-awesome/css/font-awesome.min.css"
+>>>>>>> de22ff7c0cd4addcf6c85f38f132f89d3dcc864f
             ],
             "scripts": [
               "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
