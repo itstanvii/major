@@ -1,0 +1,61 @@
+<div class="container my-5">
+  <form class="card-form p-4 shadow rounded bg-light">
+    <h4 class="mb-4 text-center text-primary">Payment Details</h4>
+
+    <div class="mb-3">
+      <label for="cardName" class="form-label">Cardholder Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cardName"
+        placeholder="John Doe"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="cardNumber" class="form-label">Card Number</label>
+      <input
+        type="text"
+        class="form-control"
+        id="cardNumber"
+        placeholder="1234 5678 9012 3456"
+        maxlength="19"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="expiry" class="form-label">Expiry Date</label>
+        <input
+          type="text"
+          class="form-control"
+          id="expiry"
+          placeholder="MM/YY"
+          required
+        />
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="cvv" class="form-label">CVV</label>
+        <input
+          type="password"
+          class="form-control"
+          id="cvv"
+          placeholder="123"
+          maxlength="4"
+          required
+        />
+      </div>
+    </div>
+
+    <button
+      type="submit"
+      class="btn btn-primary w-100 mt-3"
+      (click)="savePlan()"
+    >
+      Pay Now
+    </button>
+  </form>
+</div>

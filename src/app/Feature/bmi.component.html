@@ -1,0 +1,92 @@
+<div class="container py-5">
+  <div class="w-50 mx-auto">
+    <div class="card shadow-lg border-0">
+      <div class="card-body p-4">
+        <h2 class="card-title text-center mb-4">BMI Calculator</h2>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label class="fw-semibold">Age</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [(ngModel)]="age"
+              placeholder="Enter your age"
+            />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="fw-semibold">Gender</label>
+            <div class="btn-group w-100" role="group">
+              <input
+                type="radio"
+                class="btn-check"
+                name="gender"
+                id="male"
+                value="Male"
+                [(ngModel)]="gender"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-primary" for="male">Male</label>
+
+              <input
+                type="radio"
+                class="btn-check"
+                name="gender"
+                id="female"
+                value="Female"
+                [(ngModel)]="gender"
+                autocomplete="off"
+              />
+              <label class="btn btn-outline-danger" for="female">Female</label>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="fw-semibold">Height (cm)</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [(ngModel)]="height"
+              placeholder="e.g. 170"
+            />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="fw-semibold">Weight (kg)</label>
+            <input
+              type="number"
+              class="form-control form-control-sm"
+              [(ngModel)]="weight"
+              placeholder="e.g. 65"
+            />
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button class="btn btn-success px-4" (click)="calculateBMI()">
+            Calculate
+          </button>
+          <button class="btn btn-outline-secondary ms-2 px-4" (click)="reset()">
+            Reset
+          </button>
+          <button
+            class="btn btn-outline-secondary ms-2 px-4"
+            routerLink="/home"
+          >
+            Back
+          </button>
+        </div>
+
+        <div *ngIf="bmi !== null" class="mt-4 text-center">
+          <h4>
+            Your BMI: <span class="text-primary">{{ bmi }}</span>
+          </h4>
+          <p class="fs-5">
+            Category: <strong>{{ category }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
