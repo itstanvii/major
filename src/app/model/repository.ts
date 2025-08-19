@@ -30,4 +30,7 @@ export class Repository {
   getAllTrainers(): Observable<Trainer[]> {
     return this.dataSource.getAllTrainers();
   }
+  updateUser(id: number, user: User): Observable<User> {
+    return this.dataSource.updateUser(id, user);
+  }
 }

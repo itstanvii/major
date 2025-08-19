@@ -50,4 +50,11 @@ export class HomeComponent {
   trainerLogin() {
     this.router.navigate(['/trainer-login']);
   }
+  func() {
+    if (localStorage.getItem('logged')) {
+      // console.log(localStorage);
+      return false;
+    }
+    return true;
+  }
 }

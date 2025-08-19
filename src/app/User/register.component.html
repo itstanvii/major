@@ -54,6 +54,40 @@
       </div>
     </div>
 
+    <div class="form-group">
+      <label>Age</label>
+      <input
+        type="number"
+        class="form-control"
+        name="age"
+        [(ngModel)]="user.age"
+        required
+        min="1"
+        max="120"
+        placeholder="Enter your age"
+        #age="ngModel"
+      />
+      <div *ngIf="age.invalid && age.touched" class="text-danger">
+        Age is required & must be between 1 and 120.
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Profile Image URL</label>
+      <input
+        type="text"
+        class="form-control"
+        name="imageUrl"
+        [(ngModel)]="user.imageUrl"
+        required
+        placeholder="Enter image URL"
+        #imageUrl="ngModel"
+      />
+      <div *ngIf="imageUrl.invalid && imageUrl.touched" class="text-danger">
+        Profile image URL is required.
+      </div>
+    </div>
+
     <!-- Height -->
     <div class="form-group">
       <label>Height</label>

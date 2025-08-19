@@ -16,11 +16,13 @@ export class PlanComponent {
     if (!user) {
       // User not logged in
       this.message = '⚠️ Please log in first to continue.';
-      this.router.navigate(['/login']);
       // Optional: Redirect to login page after a short delay
+      setTimeout(() => {
+        this.router.navigate(['/login']);
+      }, 1500);
     } else {
       // User is logged in → go to payment page
-      // this.router.navigate(['/payment', this.plan.id]);
+      this.router.navigate(['/payment', this.plan.title]);
     }
   }
 }

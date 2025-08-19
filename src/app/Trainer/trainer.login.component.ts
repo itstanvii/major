@@ -13,7 +13,9 @@ export class TrainerLoginComponent {
   constructor(private repository: Repository, private router: Router) {}
 
   login() {
+    console.log('into login');
     this.repository.getAllTrainers().subscribe((trainers) => {
+      console.log('Fetched Trainers:', trainers);
       const trainer = trainers.find(
         (t) =>
           t.email === this.credientials.email &&

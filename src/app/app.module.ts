@@ -1,20 +1,21 @@
-import { TrainerRegisterComponent } from './Feature/trainer.register.component';
+import { TrainerRegisterComponent } from './Trainer/trainer.register.component';
 import { BmiCalculatorComponent } from './Feature/bmi.component';
-import { AuthComponent } from './Auth/auth.component';
-import { UserComponent } from './Feature/user.component';
-import { RegisterComponent } from './Feature/register.component';
+import { UserComponent } from './User/user.component';
+import { RegisterComponent } from './User/register.component';
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Feature/home.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FeatureModule } from './Feature/feature.module';
-import { LoginComponent } from './Feature/login.component';
-import { TrainerLoginComponent } from './Feature/trainer.login.component';
-import { TrainerComponent } from './Feature/trainer.component';
+import { LoginComponent } from './User/login.component';
+import { TrainerLoginComponent } from './Trainer/trainer.login.component';
+import { TrainerComponent } from './Trainer/trainer.component';
+import { UserModule } from './User/user.module';
+import { TrainerModule } from './Trainer/trainer.module';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,6 +24,8 @@ import { TrainerComponent } from './Feature/trainer.component';
     FormsModule,
     HttpClientModule,
     FeatureModule,
+    UserModule,
+    TrainerModule,
 
     RouterModule.forRoot([
       {
@@ -58,6 +61,10 @@ import { TrainerComponent } from './Feature/trainer.component';
         component: HomeComponent,
       },
       {
+        path: 'payment/:title',
+        component: HomeComponent,
+      },
+      {
         path: 'bmiCalculator',
         component: BmiCalculatorComponent,
       },
@@ -72,7 +79,7 @@ import { TrainerComponent } from './Feature/trainer.component';
       },
     ]),
   ],
-  providers: [],
+  providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

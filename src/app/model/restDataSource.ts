@@ -30,4 +30,8 @@ export class RestDataSource {
   getAllTrainers(): Observable<Trainer[]> {
     return this.http.get<Trainer[]>(`${this.baseUrl}/trainer`);
   }
+
+  updateUser(id: number, user: User): Observable<User> {
+    return this.http.put<User>(`${this.baseUrl}/user/${id}`, user);
+  }
 }

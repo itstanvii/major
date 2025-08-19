@@ -1,0 +1,93 @@
+<!-- <nav-bar />
+<div>Hello {{ trainerData?.name }}</div>
+
+<div>Your Speciality is {{ trainerData?.specialization }}</div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+
+    <th>Height</th>
+    <th>dietPlan</th>
+    <th>workoutPlan</th>
+  </tr>
+  <tr *ngFor="let user of userList">
+    <td>{{ user.name }}</td>
+    <td>{{ user.weight }}</td>
+    <td>{{ user.height }}</td>
+    <td>
+      <!-- <textarea name="diet-plan" id="diet-plan"></textarea> -->
+
+<nav-bar></nav-bar>
+
+<div class="container mt-5">
+  <!-- Trainer Info -->
+  <div class="text-center mb-4">
+    <h2 class="text-dark fw-bold">Hello, {{ trainerData?.name }}</h2>
+    <h5 class="text-muted">
+      Your Speciality: {{ trainerData?.specialization }}
+    </h5>
+  </div>
+
+  <!-- User Table -->
+  <div class="table-responsive">
+    <table
+      class="table table-bordered table-hover align-middle text-center shadow-sm"
+    >
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Weight (kg)</th>
+          <th>Height (m)</th>
+          <th>BMI</th>
+
+          <th>Diet Plan</th>
+          <th>Workout Plan</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of userList">
+          <td>{{ user.name }}</td>
+          <td>{{ user.weight }}</td>
+          <td>{{ user.height }}</td>
+
+          <td>
+            {{ user.weight / (user.height * user.height) | number : "1.2-2" }}
+          </td>
+
+          <td>
+            <textarea
+              class="form-control"
+              [(ngModel)]="user.dietPlan"
+              rows="2"
+              placeholder="Enter diet plan"
+            ></textarea>
+          </td>
+          <td>
+            <textarea
+              class="form-control"
+              [(ngModel)]="user.workoutPlan"
+              rows="2"
+              placeholder="Enter workout plan"
+            ></textarea>
+          </td>
+          <td>
+            <button class="btn btn-success btn-sm" (click)="savePlan(user)">
+              Save Plan
+            </button>
+            <div *ngIf="message" class="mt-2 text-danger text-center">
+              {{ message }}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Logout Button -->
+  <div class="text-center mt-4">
+    <button class="btn btn-outline-danger" (click)="logout()">Log Out</button>
+  </div>
+</div>

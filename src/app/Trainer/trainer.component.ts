@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Repository } from '../model/repository';
+import { User } from '../model/user.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'trainer',
   templateUrl: 'trainer.component.html',
 })
 export class TrainerComponent implements OnInit {
+  user: User = new User();
   trainerId!: string;
   trainerData: any;
   userData: any;
+  message: string = '';
   constructor(
     private route: ActivatedRoute,
     private repo: Repository,
@@ -36,6 +40,30 @@ export class TrainerComponent implements OnInit {
   }
 
   logout() {
+    localStorage.setItem('loggedTrainer', '');
     this.router.navigate(['/home']);
+  }
+  save(form: NgForm) {
+    if (form.valid) {
+      // Save logic here (e.g., POST to json-server)
+      this.repo.saveUser(this.user);
+      this.router.navigate(['/home']);
+      console.log('Trainer saved:', this.user);
+    } else {
+      console.log('Form is invalid');
+    }
+  }
+
+  savePlan(user: any) {
+    const updatedUser = {
+      ...user,
+      dietPlan: user.dietPlan,
+      workoutPlan: user.workoutPlan,
+    };
+
+    this.repo.updateUser(updatedUser.id, updatedUser).subscribe(() => {
+      alert(`Plan saved for ${updatedUser.name}`);
+      // Optionally show a toast or alert
+    });
   }
 }
