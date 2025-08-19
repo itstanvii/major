@@ -1,0 +1,14 @@
+.cart-item {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button.btn-danger {
+  font-weight: bold;
+}
