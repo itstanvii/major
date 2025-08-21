@@ -1,0 +1,98 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Left Sidebar */
+.sidebar-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16.6667%; /* 2/12 columns */
+  height: 100vh;
+  background-color: #212529;
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
+}
+
+.sidebar-left .nav-link {
+  color: #d1d5db;
+  font-weight: 500;
+}
+
+.sidebar-left .nav-link:hover {
+  color: #fcd34d;
+}
+
+/* Right Sidebar */
+.sidebar-right {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 33.3333%;
+  background-color: #f9fafb;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  z-index: 1000;
+  border: 1px solid #181c24;
+  border-radius: 10px;
+}
+
+/* Main Content */
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card h5,
+.card h6 {
+  font-weight: 600;
+  color: #111827;
+}
+
+.card p {
+  color: #4b5563;
+  margin-bottom: 0;
+}
+
+/* Section Titles */
+h3 {
+  color: #181c24;
+}
+h4 {
+  font-weight: 700;
+  color: #fcd34d;
+}
+
+/* Gradient Brand Text */
+.gradient-text {
+  background: linear-gradient(to right, #ffffff, #fcd34d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Small Cards (Weight, Height, Age) */
+.small-card .card-body {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Calendar Card */
+.calendar-card {
+  background-color: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
