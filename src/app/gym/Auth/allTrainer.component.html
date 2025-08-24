@@ -1,0 +1,71 @@
+<div class="col-9">
+  <div class="container mt-4">
+    <div class="row">
+      <div
+        class="col-md-4 mb-4"
+        *ngFor="let trainer of trainers"
+        style="padding: 10px"
+      >
+        <div
+          class="card"
+          style="
+            background-color: #000000;
+            border: 2px solid #facc35;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(250, 204, 53, 0.3);
+            color: #ffffff;
+          "
+        >
+          <div class="card-body">
+            <h4
+              class="card-title"
+              style="font-weight: bold; font-size: 1.25rem"
+            >
+              <span style="color: #facc35">Name : </span>
+              <span style="color: #ffffff">{{ trainer.name }}</span>
+            </h4>
+            <h4 class="card-title" style="font-weight: bold; font-size: 1.1rem">
+              <span style="color: #facc35">Specialization : </span>
+              <span style="color: #ffffff">{{ trainer.specialization }}</span>
+            </h4>
+
+            <button
+              class="btn btn-danger mt-3"
+              style="
+                margin-top: 10px;
+                border-radius: 8px;
+                font-weight: 500;
+                padding: 6px 12px;
+                border-color: #facc35;
+                color: #facc35;
+              "
+              (click)="deleteTrainer(trainer.id)"
+            >
+              <i class="fas fa-trash-alt"></i> Delete
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-3 d-flex align-items-start justify-content-center">
+  <button
+    type="button"
+    class="btn"
+    style="
+      background-color: #000000;
+      color: #facc35;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      border: 2px solid #facc35;
+      box-shadow: 0 4px 10px rgba(250, 204, 53, 0.3);
+      margin-top: 20px;
+    "
+    routerLink="/auth/admin"
+  >
+    Back
+  </button>
+</div>

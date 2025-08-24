@@ -1,0 +1,97 @@
+<nav
+  class="navbar navbar-expand-lg navbar-light bg-light"
+  style="background: linear-gradient(to right, #000000, #160101)"
+>
+  <a
+    class="navbar-brand d-flex align-items-center gap-2"
+    href="#"
+    style="font-family: 'Bebas Neue', sans-serif; font-size: 2rem"
+  >
+    <img
+      src="https://img.icons8.com/ios-filled/50/ffffff/dumbbell.png"
+      alt="FitVerse Logo"
+      style="height: 28px; filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3))"
+    />
+    <span
+      style="
+        background: linear-gradient(to right, #ffffff, #fcd34d);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: bold;
+      "
+      >FitVerse</span
+    >
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <!-- Left-aligned links -->
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home">Home</a>
+      </li>
+      <li *ngIf="func() && funcTrainer()">
+        <a class="nav-link" routerLink="/trainerInfo" style="color: #ffffff">
+          Trainer
+        </a>
+      </li>
+      <li *ngIf="func() && funcTrainer()">
+        <a
+          class="nav-link"
+          routerLink="/auth/adminLogin"
+          style="color: #ffffff"
+        >
+          Admin
+        </a>
+      </li>
+    </ul>
+
+    <!-- Right-aligned links -->
+    <ul class="navbar-nav ml-auto" *ngIf="func() && funcTrainer()">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/login" style="color: #ffffff">
+          Login
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/register" style="color: #ffffff">
+          Register
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="!func()">
+      <li class="nav-item">
+        <a
+          class="nav-link position-relative"
+          routerLink="/cart"
+          style="color: #ffffff"
+        >
+          <i class="fas fa-shopping-cart mr-1"></i>Cart
+          <span class="badge bg-warning text-white ms-1">{{
+            cartCount()
+          }}</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="logout()" style="color: #ffffff">
+          Logout
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="gotoDashboard()" style="color: #ffffff">
+          Dashboard
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>

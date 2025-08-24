@@ -1,0 +1,63 @@
+<form
+  #form="ngForm"
+  (ngSubmit)="onSubmit(form)"
+  novalidate
+  class="p-4 rounded shadow"
+  style="
+    background-color: #121212;
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+    color: white;
+  "
+>
+  <!-- Projected Heading -->
+  <div class="text-center mb-4" style="color: #ffc107">
+    <ng-content select="h3"></ng-content>
+  </div>
+
+  <!-- Email -->
+  <div class="form-group mb-3">
+    <label for="email" class="form-label text-warning">
+      <i class="fas fa-envelope me-1"></i>Email
+    </label>
+    <input
+      id="email"
+      class="form-control bg-dark text-white border-warning"
+      name="email"
+      [(ngModel)]="credentials.email"
+      required
+      email
+      placeholder="Enter your email"
+      #email="ngModel"
+    />
+    <div *ngIf="email.invalid && email.touched" class="text-danger">
+      A valid email is required.
+    </div>
+  </div>
+
+  <!-- Password -->
+  <div class="form-group mb-4">
+    <label for="password" class="form-label text-warning">
+      <i class="fas fa-lock me-1"></i>Password
+    </label>
+    <input
+      id="password"
+      class="form-control bg-dark text-white border-warning"
+      type="password"
+      name="password"
+      [(ngModel)]="credentials.password"
+      required
+      minlength="6"
+      placeholder="Enter your password"
+      #password="ngModel"
+    />
+    <div *ngIf="password.invalid && password.touched" class="text-danger">
+      Password is required (min 6 characters).
+    </div>
+  </div>
+
+  <!-- Projected Buttons -->
+  <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+    <ng-content select="button"></ng-content>
+  </div>
+</form>

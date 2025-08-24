@@ -1,0 +1,59 @@
+.store-card {
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+.store-card:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.store-card h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.store-card p {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  background-color: transparent;
+  border: 2px solid #ccc;
+  color: #333;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  border-color: #ffc107;
+  color: #856404;
+  background-color: #fff8e1;
+}
+
+.btn:nth-child(1):hover {
+  border-color: #ffc107;
+  color: #856404;
+}
+.btn:nth-child(2):hover {
+  border-color: #ffc107;
+  color: #856404;
+  background-color: #fff8e1;
+}
+.btn:nth-child(3):hover {
+  border-color: #dc3545;
+  color: #dc3545;
+  background-color: #fff0f1;
+}

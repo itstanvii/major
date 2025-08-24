@@ -1,0 +1,42 @@
+<div
+  class="card shadow-sm mb-4 h-100"
+  style="
+    width: 18rem;
+    background-color: black;
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.7);
+  "
+>
+  <div class="card-body text-white">
+    <h5 class="card-title">{{ plan.title }}</h5>
+    <p class="card-text">{{ plan.description }}</p>
+    <ul class="list-group list-group-flush mb-3">
+      <li
+        class="list-group-item text-white"
+        *ngFor="let feature of plan.features"
+        style="background-color: black; border-color: #ffc107"
+      >
+        {{ feature }}
+      </li>
+    </ul>
+
+    <div class="d-flex justify-content-between align-items-center mb-2">
+      <div class="price text-success">
+        <strong>₹{{ plan.price }} / month</strong><br />
+        <small class="text-muted">(+18% GST = ₹{{ plan.total }})</small>
+      </div>
+
+      <button
+        class="btn btn-danger text-white rounded-pill px-3"
+        (click)="buyPlan()"
+      >
+        Buy Now
+      </button>
+    </div>
+
+    <!-- Message displayed below the button -->
+    <div *ngIf="message" class="mt-2 text-danger text-center">
+      {{ message }}
+    </div>
+  </div>
+</div>

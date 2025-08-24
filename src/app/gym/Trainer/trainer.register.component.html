@@ -1,0 +1,150 @@
+<div class="container mt-5 mb-5">
+  <form
+    [formGroup]="form"
+    (ngSubmit)="save()"
+    class="p-4 rounded shadow"
+    style="
+      background-color: #1e1e1e;
+      border: 2px solid #ffc107;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+      color: white;
+    "
+  >
+    <h3 class="text-center mb-4" style="color: #ffc107">
+      <i class="fas fa-user-plus me-2"></i>TRAINER REGISTRATION
+    </h3>
+
+    <!-- Name -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Name</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="name"
+        placeholder="Enter your name"
+      />
+      <div
+        *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+        class="text-danger"
+      >
+        Name is required.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Email</label>
+      <input
+        type="email"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div
+        *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+        class="text-danger"
+      >
+        Valid email is required.
+      </div>
+    </div>
+
+    <!-- Specialization -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Specialization</label>
+      <select
+        class="form-control bg-dark text-white border-warning"
+        formControlName="specialization"
+      >
+        <option value="" disabled>Select specialization</option>
+        <option value="weightGain">Weight Gain</option>
+        <option value="weightLoss">Weight Loss</option>
+        <option value="bodyBuilding">Body Building</option>
+        <option value="cardio">Cardio Training</option>
+        <option value="crossfit">CrossFit</option>
+        <option value="yoga">Yoga</option>
+        <option value="strength">Strength Training</option>
+      </select>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Password</label>
+      <input
+        type="password"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+        class="text-danger"
+      >
+        Password is required (min 6 characters).
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Experience (years)</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="experience"
+        placeholder="Enter experience in years"
+      />
+      <div
+        *ngIf="
+          form.get('experience')?.invalid && form.get('experience')?.touched
+        "
+        class="text-danger"
+      >
+        Experience must be between 0 and 50 years.
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Certifications</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="certifications"
+        placeholder="Enter number of certifications"
+      />
+      <div
+        *ngIf="
+          form.get('certifications')?.invalid &&
+          form.get('certifications')?.touched
+        "
+        class="text-danger"
+      >
+        Enter number of certifications (1–10).
+      </div>
+    </div>
+
+    <!-- Image URL -->
+    <div class="form-group mb-4">
+      <label class="text-warning">Profile Image URL</label>
+      <input
+        type="url"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="image"
+        placeholder="Enter image URL (optional)"
+      />
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-center gap-3">
+      <button
+        type="submit"
+        class="btn btn-warning text-dark"
+        [disabled]="form.invalid"
+      >
+        Save
+      </button>
+      <button type="button" class="btn btn-outline-warning" routerLink="/home">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

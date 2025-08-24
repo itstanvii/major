@@ -1,0 +1,198 @@
+<nav-bar></nav-bar>
+<div class="container mt-5 mb-5">
+  <form
+    [formGroup]="registerForm"
+    (ngSubmit)="save()"
+    novalidate
+    class="p-4 rounded shadow"
+    style="
+      background-color: #1e1e1e;
+      border: 2px solid #ffc107;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+      color: white;
+    "
+  >
+    <h3 class="text-center mb-4" style="color: #ffc107">
+      <i class="fas fa-dumbbell me-2"></i>Register to FitVerse
+    </h3>
+
+    <!-- Name -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Name</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="name"
+        placeholder="Enter your name"
+      />
+      <div
+        *ngIf="
+          registerForm.get('name')?.invalid && registerForm.get('name')?.touched
+        "
+        class="text-danger"
+      >
+        Name is required.
+      </div>
+    </div>
+
+    <!-- Email -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Email</label>
+      <input
+        type="email"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="email"
+        placeholder="Enter your email"
+      />
+      <div
+        *ngIf="
+          registerForm.get('email')?.invalid &&
+          registerForm.get('email')?.touched
+        "
+        class="text-danger"
+      >
+        Valid email is required.
+      </div>
+    </div>
+
+    <!-- Password -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Password</label>
+      <input
+        type="password"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="password"
+        placeholder="Enter your password"
+      />
+      <div
+        *ngIf="
+          registerForm.get('password')?.invalid &&
+          registerForm.get('password')?.touched
+        "
+        class="text-danger"
+      >
+        Password is required (min 6 characters).
+      </div>
+    </div>
+
+    <!-- Age -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Age</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="age"
+        placeholder="Enter your age"
+      />
+      <div
+        *ngIf="
+          registerForm.get('age')?.invalid && registerForm.get('age')?.touched
+        "
+        class="text-danger"
+      >
+        Age is required & must be between 1 and 120.
+      </div>
+    </div>
+
+    <!-- Profile Image URL -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Profile Image URL</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="imageUrl"
+        placeholder="Enter image URL"
+      />
+      <div
+        *ngIf="
+          registerForm.get('imageUrl')?.invalid &&
+          registerForm.get('imageUrl')?.touched
+        "
+        class="text-danger"
+      >
+        Profile image URL is required.
+      </div>
+    </div>
+
+    <!-- Height -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Height</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="height"
+        placeholder="in meters"
+      />
+      <div
+        *ngIf="
+          registerForm.get('height')?.invalid &&
+          registerForm.get('height')?.touched
+        "
+        class="text-danger"
+      >
+        Height must be between 0.5m and 2.5m.
+      </div>
+    </div>
+
+    <!-- Weight -->
+    <div class="form-group mb-3">
+      <label class="text-warning">Weight</label>
+      <input
+        type="number"
+        class="form-control bg-dark text-white border-warning"
+        formControlName="weight"
+        placeholder="in kg"
+      />
+      <div
+        *ngIf="
+          registerForm.get('weight')?.invalid &&
+          registerForm.get('weight')?.touched
+        "
+        class="text-danger"
+      >
+        Weight must be between 20kg and 200kg.
+      </div>
+    </div>
+
+    <!-- Category -->
+    <div class="form-group mb-4">
+      <label class="text-warning">Specialization</label>
+      <select
+        class="form-control bg-dark text-white border-warning"
+        formControlName="category"
+      >
+        <option value="" disabled>Select a category</option>
+        <option value="weightGain">Weight Gain</option>
+        <option value="weightLoss">Weight Loss</option>
+        <option value="bodyBuilding">Body Building</option>
+        <option value="cardio">Cardio Training</option>
+        <option value="crossfit">CrossFit</option>
+        <option value="yoga">Yoga</option>
+        <option value="strength">Strength Training</option>
+      </select>
+      <div
+        *ngIf="
+          registerForm.get('category')?.invalid &&
+          registerForm.get('category')?.touched
+        "
+        class="text-danger"
+      >
+        Category is required.
+      </div>
+    </div>
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-center gap-3">
+      <button
+        type="submit"
+        class="btn btn-warning text-dark"
+        [disabled]="registerForm.invalid"
+      >
+        Save
+      </button>
+      <button type="reset" class="btn btn-outline-warning" routerLink="/home">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,157 @@
+<div class="container-fluid">
+  <div class="row vh-100">
+    <!-- Left Sidebar (20%) -->
+    <div class="sidebar-left">
+      <ul class="nav flex-column text-center">
+        <li class="nav-item mb-3">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link" href="#" (click)="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Center Content (50%) -->
+    <div class="col-md-6 py-4">
+      <h3 class="mb-4">Welcome, {{ userData?.name }}</h3>
+
+      <!-- Stats Cards -->
+      <div class="row text-center mb-4">
+        <div class="col-6 col-md-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>Calories</h5>
+              <p>
+                <i class="fas fa-fire-alt text-blue mr-2"></i>
+                {{ userData?.calories }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>HeartRate</h5>
+              <p>
+                <i class="fas fa-heartbeat text-danger mr-2"></i
+                >{{ userData?.heartRate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>Running</h5>
+              <p>
+                <i class="fas fa-running text-primary mr-2"></i
+                >{{ userData?.running }}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 mb-3">
+          <div class="card">
+            <div class="card-body">
+              <h5>Sleep</h5>
+              <p>
+                <i class="fas fa-bed text-info mr-2"></i>{{ userData?.sleep }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Food Recommendation -->
+      <div class="mb-4">
+        <h3>Food Recommendation</h3>
+        {{ userData?.dietPlan }}
+      </div>
+      <div class="mb-4">
+        <h3>WorkOut Plan</h3>
+        {{ userData?.workoutPlan }}
+      </div>
+
+      <!-- Trainer & Output Cards -->
+      <div class="row">
+        <div class="col-md-6 mb-3 px-3 rounded">
+          <h5 class="card-title text-warning">Our Popular Trainers</h5>
+
+          <div class="row">
+            <div class="col-md-6" *ngFor="let trainer of trainers">
+              <div class="card text-white border-warning mb-3 shadow-sm">
+                <div class="card-body text-center">
+                  <h6>{{ trainer?.name }}</h6>
+                  <p class="card-text text-muted">
+                    {{ trainer?.specialization }}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar (30%) -->
+    <div class="sidebar-right text-center">
+      <!-- User Image -->
+      <div class="mb-4">
+        <img
+          [src]="userData?.imageUrl"
+          alt="User Image"
+          class="rounded-circle"
+          width="80"
+          height="80"
+        />
+      </div>
+      <div class="mb-4">
+        <h4>{{ userData?.name }}</h4>
+        <p>{{ userData?.email }}</p>
+      </div>
+
+      <!-- User Stats -->
+      <div class="row mb-4">
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body py-1 px-1">
+              <h6><i class="fas fa-weight mr-1 text-warning"></i>Weight</h6>
+              <p>{{ userData?.weight }} kg</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body py-1 px-1">
+              <h6>
+                <i class="fas fa-ruler-vertical mr-1 text-warning"></i>Height
+              </h6>
+              <p>{{ userData?.height }} cm</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body py-1 px-">
+              <h6><i class="fas fa-user-clock text-warning mr-1"></i>Age</h6>
+              <p>{{ userData?.age }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calendar -->
+      <!-- <div class="card p-3" style="margin: auto">
+        <h5>Calendar</h5>
+
+        <mwl-calendar-month-view
+          [viewDate]="viewDate"
+          [events]="[]"
+          [dayModifier]="dayModifier"
+        >
+        </mwl-calendar-month-view>
+      </div> -->
+    </div>
+  </div>
+</div>

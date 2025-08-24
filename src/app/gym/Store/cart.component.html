@@ -1,0 +1,96 @@
+<div
+  class="container py-4 text-white"
+  style="background-color: #000"
+  *ngIf="items.length; else empty"
+>
+  <div
+    class="card p-4 mb-4"
+    style="background-color: #1c1c1c; border-radius: 12px"
+  >
+    <h3 class="text-warning mb-4" style="font-size: 2rem">Your Cart</h3>
+
+    <div class="list-group">
+      <div
+        class="list-group-item bg-dark text-white border-0 mb-3 rounded"
+        *ngFor="let it of items"
+      >
+        <div class="d-flex align-items-center">
+          <img
+            [src]="it.product.src"
+            alt="{{ it.product.itemName }}"
+            style="width: 80px; height: 80px; object-fit: contain"
+            class="me-4 rounded"
+          />
+          <div class="flex-grow-1 ms-2">
+            <div class="fw-semibold mb-1" style="font-size: 1.2rem">
+              {{ it.product.itemName }}
+            </div>
+            <div class="text-muted" style="font-size: 1rem">
+              ₹{{ it.product.price }}
+            </div>
+          </div>
+          <div class="d-flex align-items-center ms-3">
+            <button
+              class="btn btn-sm"
+              style="
+                color: white;
+                border: 1px solid #ffc107;
+                background-color: transparent;
+              "
+              (click)="decrease(it.product.id)"
+            >
+              −
+            </button>
+            <span class="mx-2 fw-bold" style="color: white; font-size: 1.1rem">
+              {{ it.quantity }}
+            </span>
+            <button
+              class="btn btn-sm"
+              style="
+                color: white;
+                border: 1px solid #ffc107;
+                background-color: transparent;
+              "
+              (click)="increase(it.product.id)"
+            >
+              +
+            </button>
+            <button
+              class="btn btn-sm btn-outline-danger ms-3"
+              (click)="remove(it.product.id)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-end mt-4">
+      <h5 class="fw-bold text-light" style="font-size: 1.5rem">
+        Total: ₹{{ total }}
+      </h5>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button
+        class="btn btn-outline-warning rounded-pill px-4 fw-semibold"
+        routerLink="Store"
+      >
+        Go To Store
+      </button>
+      <button
+        class="btn btn-success rounded-pill px-4 fw-semibold"
+        (click)="gotToCartDetails()"
+      >
+        Proceed To Payment
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #empty>
+  <div class="container py-5 text-center text-muted fs-5">
+    Your cart is empty.
+  </div>
+</ng-template>

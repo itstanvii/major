@@ -1,0 +1,204 @@
+<!-- Header -->
+<header class="py-3" style="background-color: #1a1a1a">
+  <div class="container d-flex justify-content-center">
+    <a
+      class="navbar-brand d-flex align-items-center gap-2 text-decoration-none"
+      href="#"
+    >
+      <img
+        src="https://img.icons8.com/ios-filled/50/ffffff/dumbbell.png"
+        alt="FitVerse Logo"
+        style="
+          height: 28px;
+          filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.3));
+        "
+      />
+      <span
+        style="
+          font-family: 'Bebas Neue', sans-serif;
+          font-size: 2rem;
+          background: linear-gradient(to right, #ffffff, #fcd34d);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          font-weight: bold;
+        "
+      >
+        FitVerse
+      </span>
+    </a>
+  </div>
+  <div class="col-3">
+    <button
+      type="button"
+      class="btn btn-warning text-white m-2"
+      routerLink="/home"
+      style="border-color: #ffc107"
+    >
+      Logout
+    </button>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section
+  class="d-flex align-items-center"
+  style="
+    background-image: url('assets/images/gg1.webp');
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  "
+>
+  <div
+    class="position-absolute w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6); z-index: 1"
+  ></div>
+
+  <div
+    class="position-relative"
+    style="z-index: 2; padding-left: 80px; max-width: 1000px"
+  >
+    <div class="d-flex align-items-center gap-4 flex-wrap">
+      <h1
+        class="hero-heading m-0"
+        style="
+          color: #facc35;
+          font-size: 4.5rem;
+          font-weight: bold;
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        "
+      >
+        Welcome Back, Admin
+      </h1>
+      <p
+        class="lead m-0"
+        style="color: #ffffff; font-size: 1.5rem; font-weight: 500"
+      >
+        FitVerse Operations Dashboard
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Store Management Card -->
+<section class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5 col-lg-5">
+      <div
+        class="card store-card text-dark shadow-lg"
+        style="
+          background: linear-gradient(to bottom right, #f9f9f9, #ececec);
+          border-radius: 20px;
+          border: 3px solid #facc35;
+          box-shadow: 0 0 15px rgba(250, 204, 53, 0.4);
+        "
+      >
+        <div class="card-body text-center py-5">
+          <div class="mb-4">
+            <img
+              src="https://img.icons8.com/ios-filled/100/9f7a0b/shopping-cart.png"
+              alt="Store Icon"
+              class="img-fluid"
+              style="
+                height: 64px;
+                filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+              "
+            />
+          </div>
+          <h3
+            class="fw-bold mb-3"
+            style="
+              font-family: 'Bebas Neue', sans-serif;
+              font-size: 2.25rem;
+              color: #9f7a0b;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            "
+          >
+            Gym Management
+          </h3>
+          <p class="text-muted mb-4" style="font-size: 1.1rem">
+            Manage Users and Trainers
+          </p>
+          <div class="btn-group d-flex justify-content-center flex-wrap">
+            <button
+              class="btn fitverse-btn add m-2"
+              routerLink="/auth/view-user"
+            >
+              Manage Users
+            </button>
+            <button
+              class="btn fitverse-btn remove m-2"
+              routerLink="/auth/view-trainer"
+            >
+              Manage Trainers
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 col-lg-5">
+      <div
+        class="card store-card text-dark shadow-lg"
+        style="
+          background: linear-gradient(to bottom right, #f9f9f9, #ececec);
+          border-radius: 20px;
+          border: 3px solid #facc35;
+          box-shadow: 0 0 15px rgba(250, 204, 53, 0.4);
+        "
+      >
+        <div class="card-body text-center py-5">
+          <div class="mb-4">
+            <img
+              src="https://img.icons8.com/ios-filled/100/9f7a0b/shopping-cart.png"
+              alt="Store Icon"
+              class="img-fluid"
+              style="
+                height: 64px;
+                filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.2));
+              "
+            />
+          </div>
+          <h3
+            class="fw-bold mb-3"
+            style="
+              font-family: 'Bebas Neue', sans-serif;
+              font-size: 2.25rem;
+              color: #9f7a0b;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            "
+          >
+            Store Management
+          </h3>
+          <p class="text-muted mb-4" style="font-size: 1.1rem">
+            Control your gym's product catalog with precision
+          </p>
+          <div class="btn-group d-flex justify-content-center flex-wrap">
+            <button class="btn fitverse-btn add m-2" routerLink="/auth/edit">
+              Add Products
+            </button>
+            <button
+              class="btn fitverse-btn remove m-2"
+              routerLink="/auth/remove"
+            >
+              Remove Products
+            </button>
+            <button
+              class="btn fitverse-btn remove m-2"
+              routerLink="/auth/view-orders"
+            >
+              View Orders
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="text-white pt-4 pb-3 mt-5" style="background-color: #1a1a1a">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2025 FitVerse Admin Panel. All rights reserved.</p>
+  </div>
+</footer>

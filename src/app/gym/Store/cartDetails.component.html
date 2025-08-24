@@ -1,0 +1,75 @@
+<div class="container py-4 text-white" style="background-color: #000">
+  <div
+    class="card p-4 mb-4"
+    style="background-color: #1c1c1c; border-radius: 12px"
+  >
+    <div *ngIf="successMsg" class="mt-2" [ngClass]="messageClass">
+      {{ successMsg }}
+    </div>
+    <h3 class="text-warning">Hey {{ userData?.name }} 👋</h3>
+    <p class="text-light">{{ userData?.email }}</p>
+
+    <div class="mb-3">
+      <label for="address" class="form-label text-white"
+        >Delivery Address</label
+      >
+      <input
+        type="text"
+        id="address"
+        class="form-control"
+        [(ngModel)]="address"
+        name="address"
+        placeholder="Enter your delivery address"
+        required
+        style="max-width: 500px"
+      />
+      <div *ngIf="addressError" class="text-danger mt-1">
+        {{ addressError }}
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="card p-4"
+    style="background-color: #1c1c1c; border-radius: 12px"
+    *ngIf="items.length; else empty"
+  >
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h4 class="text-warning">Your Order</h4>
+      <h5 class="text-light">Total: ₹{{ total }}</h5>
+    </div>
+
+    <div class="list-group">
+      <div
+        class="list-group-item bg-dark text-white border-0 mb-2 rounded"
+        *ngFor="let it of items"
+      >
+        <div class="d-flex align-items-center">
+          <img
+            [src]="it.product.src"
+            alt="{{ it.product.itemName }}"
+            style="width: 64px; height: 64px; object-fit: contain"
+            class="me-3"
+          />
+          <div class="flex-grow-1">
+            <div class="fw-semibold">{{ it.product.itemName }}</div>
+            <div class="text-muted">₹{{ it.product.price }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button class="btn btn-outline-warning rounded-pill px-4">
+        Go To Store
+      </button>
+      <button class="btn btn-success rounded-pill px-4" (click)="saveOrder()">
+        Proceed to Pay
+      </button>
+    </div>
+  </div>
+
+  <ng-template #empty>
+    <div class="container py-5 text-center text-muted">Your cart is empty.</div>
+  </ng-template>
+</div>

@@ -1,0 +1,35 @@
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  padding: 16px;
+  height: 300px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.description {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.delete-btn {
+  align-self: flex-end;
+  margin-top: 12px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}

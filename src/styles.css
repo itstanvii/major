@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+.dark-theme {
+  background-color: #121212;
+  color: white;
+  min-height: 100vh;
+}
+
+html,
+body {
+  background-color: #121212;
+  color: white;
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.nav-link {
+  color: #ffc107 !important; /* FitVerse yellow */
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  text-shadow: 0 0 5px #ffc107;
+}

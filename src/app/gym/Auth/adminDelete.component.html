@@ -1,0 +1,100 @@
+<div class="container mt-5 manage-products">
+  <h2 class="text-center mb-4" style="color: #ffc107">Manage Products</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let product of pagedProducts">
+      <div
+        class="card h-100 shadow-sm"
+        style="
+          background-color: #121212;
+          border: 2px solid #ffc107;
+          box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+          color: white;
+          border-radius: 0.5rem;
+        "
+      >
+        <img
+          [src]="product.src"
+          class="card-img-top img-fluid"
+          alt="{{ product.itemName }}"
+          style="
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            background-color: #1e1e1e;
+          "
+        />
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title text-warning">{{ product.itemName }}</h5>
+            <p class="card-text text-white">{{ product.description }}</p>
+            <p class="card-text text-light">
+              <strong class="text-warning">Category:</strong>
+              {{ product.category }}
+            </p>
+            <p class="card-text text-light">
+              <strong class="text-warning">Price:</strong> ₹{{ product.price }}
+            </p>
+          </div>
+          <button
+            class="btn btn-danger mt-3"
+            (click)="deleteProduct(product.id)"
+          >
+            Delete Product
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav *ngIf="totalPages > 1" class="mt-4">
+    <ul class="pagination justify-content-center">
+      <!-- Previous Button -->
+      <li
+        class="page-item"
+        [class.disabled]="currentPage === 1"
+        (click)="changePage(currentPage - 1)"
+      >
+        <a class="page-link bg-dark text-warning border-warning">Previous</a>
+      </li>
+
+      <!-- Page Numbers -->
+      <li
+        class="page-item"
+        *ngFor="let page of [].constructor(totalPages); let i = index"
+        [class.active]="currentPage === i + 1"
+        (click)="changePage(i + 1)"
+      >
+        <a
+          class="page-link border-warning"
+          [ngClass]="{
+            'bg-warning text-dark': currentPage === i + 1,
+            'bg-dark text-warning': currentPage !== i + 1
+          }"
+        >
+          {{ i + 1 }}
+        </a>
+      </li>
+
+      <!-- Next Button -->
+      <li
+        class="page-item"
+        [class.disabled]="currentPage === totalPages"
+        (click)="changePage(currentPage + 1)"
+      >
+        <a class="page-link bg-dark text-warning border-warning">Next</a>
+      </li>
+      <div class="col-3">
+        <button
+          type="button"
+          class="btn btn-warning text-dark m-2"
+          routerLink="/auth/admin"
+        >
+          Back
+        </button>
+      </div>
+    </ul>
+  </nav>
+</div>

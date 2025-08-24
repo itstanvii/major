@@ -1,0 +1,93 @@
+<div class="container py-5">
+  <div class="w-50 mx-auto">
+    <div
+      class="card shadow-lg border-warning"
+      style="
+        background-color: #121212;
+        border: 2px solid #ffc107;
+        box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+        color: white;
+      "
+    >
+      <div class="card-body p-4">
+        <h2 class="card-title text-center mb-4 text-warning">
+          <i class="fas fa-weight me-2"></i>BMI Calculator
+        </h2>
+
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label class="form-label text-warning fw-semibold">Age</label>
+            <input
+              type="number"
+              class="form-control bg-dark text-white border-warning"
+              [(ngModel)]="age"
+              placeholder="Enter your age"
+              appAutoFocus
+            />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label text-warning fw-semibold"
+              >Height (m)</label
+            >
+            <input
+              type="number"
+              class="form-control bg-dark text-white border-warning"
+              [(ngModel)]="height"
+              placeholder="e.g. 1.5"
+            />
+          </div>
+
+          <div class="col-12 col-md-6">
+            <label class="form-label text-warning fw-semibold"
+              >Weight (kg)</label
+            >
+            <input
+              type="number"
+              class="form-control bg-dark text-white border-warning"
+              [(ngModel)]="weight"
+              placeholder="e.g. 65"
+            />
+          </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="text-center mt-4">
+          <button
+            class="btn btn-warning text-dark px-4"
+            (click)="calculateBMI()"
+          >
+            <i class="fas fa-calculator me-1"></i>Calculate
+          </button>
+        </div>
+
+        <div class="text-center mt-3">
+          <button
+            class="btn btn-outline-light px-4"
+            (click)="reset()"
+            style="margin-top: 8px; margin-right: 12px"
+          >
+            <i class="fas fa-redo me-1"></i>Reset
+          </button>
+          <button
+            class="btn btn-outline-light px-4"
+            routerLink="/home"
+            style="margin-top: 8px; margin-left: 12px"
+          >
+            <i class="fas fa-arrow-left me-1"></i>Back
+          </button>
+        </div>
+
+        <!-- Result Display -->
+        <div *ngIf="bmi !== null" class="mt-4 text-center">
+          <h4>
+            Your BMI: <span class="text-warning">{{ bmi }}</span>
+          </h4>
+          <p class="fs-5">
+            Category: <strong class="text-light">{{ category }}</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

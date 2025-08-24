@@ -1,0 +1,59 @@
+<!-- Header -->
+<div class="bg-dark p-3 text-center text-warning rounded-top">
+  <h2 class="fw-bold mb-0">ADMIN LOGIN</h2>
+</div>
+
+<!-- Error Message -->
+<div
+  class="bg-danger mt-2 p-2 text-center text-white rounded"
+  *ngIf="errorMessage != null"
+>
+  {{ errorMessage }}
+</div>
+
+<!-- Login Form -->
+<div class="text-white bg-black p-4 rounded-bottom">
+  <form novalidate #form="ngForm" (ngSubmit)="authenticate(form)">
+    <div class="mb-3">
+      <label class="form-label text-warning">Name</label>
+      <input
+        class="form-control bg-dark text-white border-warning"
+        name="username"
+        [(ngModel)]="username"
+        required
+        placeholder="Enter your name"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-warning">Password</label>
+      <input
+        class="form-control bg-dark text-white border-warning"
+        type="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+        placeholder="Enter your password"
+      />
+    </div>
+
+    <!-- Button Row -->
+    <!-- Button Row -->
+    <!-- Button Row -->
+    <div class="d-flex justify-content-center mt-4">
+      <button
+        class="btn btn-outline-warning rounded-pill px-4"
+        style="margin-right: 12px"
+        routerLink="/"
+      >
+        Go Back
+      </button>
+      <button
+        class="btn btn-success rounded-pill px-4"
+        style="margin-left: 12px"
+        type="submit"
+      >
+        Log In
+      </button>
+    </div>
+  </form>
+</div>

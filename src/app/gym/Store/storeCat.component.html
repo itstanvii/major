@@ -1,0 +1,115 @@
+<!-- Welcome Section -->
+<div class="container mt-5">
+  <h1
+    class="text-center display-4 fw-bold"
+    style="
+      color: #ccd3d6;
+      font-family: 'Impact', sans-serif;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    "
+  >
+    Welcome to
+    <span
+      style="
+        color: #000;
+        background: linear-gradient(90deg, #ffc107, #ffdb58);
+        padding: 8px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+      "
+      >DigiFit</span
+    >
+  </h1>
+  <p
+    class="text-center fs-5 fst-italic mt-3"
+    style="
+      max-width: 700px;
+      margin: 0 auto;
+      color: #ccc;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    "
+  >
+    Fuel your body, challenge your limits, and elevate your lifestyle with
+    <strong style="color: #ffc107">DigiFit</strong>.
+  </p>
+</div>
+
+<!-- Category Explorer -->
+<div class="container mt-5">
+  <h2
+    class="text-center mb-5 text-uppercase fw-bold"
+    style="
+      color: #ffc107;
+      letter-spacing: 1.5px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    "
+  >
+    Explore Store Categories
+  </h2>
+  <div class="row justify-content-center">
+    <div
+      class="col-md-6 col-lg-3 mb-4"
+      *ngFor="let cat of category"
+      style="animation: fadeInUp 0.6s ease-in-out"
+    >
+      <div
+        class="card h-100 border-0 shadow-lg"
+        style="
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.85);
+          backdrop-filter: blur(6px);
+          color: #ffc107;
+          transition: transform 0.4s ease, box-shadow 0.4s ease,
+            border 0.3s ease;
+          border-radius: 16px;
+          border: 1px solid #ffc107;
+        "
+        (click)="goToCategory(cat.name)"
+        onmouseover="this.style.transform='scale(1.07)'; this.style.boxShadow='0 12px 24px rgba(255,193,7,0.4)'; this.style.border='2px solid #ffc107'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 16px rgba(0,0,0,0.2)'; this.style.border='1px solid rgba(255, 255, 255, 0.1)'"
+      >
+        <img
+          [src]="cat.image"
+          class="card-img-top"
+          alt="{{ cat.name }}"
+          style="
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 4px solid #ffc107;
+            border-radius: 16px 16px 0 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          "
+        />
+        <div class="card-body text-center">
+          <h5
+            class="card-title text-uppercase fw-bold"
+            style="color: #ffc107; letter-spacing: 1px"
+          >
+            {{ cat.name }}
+          </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    type="button"
+    class="btn btn-warning text-dark m-2"
+    routerLink="/home"
+  >
+    Back
+  </button>
+</div>
+
+<!-- Animation Keyframes -->
+<style>
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

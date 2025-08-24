@@ -1,0 +1,162 @@
+/* Left Sidebar */
+.sidebar-left {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16.6667%;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  padding: 1rem;
+  z-index: 1000;
+  border-right: 2px solid #ffc107;
+}
+
+.sidebar-left .nav-link {
+  color: #d1d5db;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.sidebar-left .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Right Sidebar */
+.sidebar-right {
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 33.3333%;
+  background-color: #1e1e1e;
+  padding: 2rem 1rem;
+  overflow-y: auto;
+  z-index: 1000;
+  border-left: 2px solid #ffc107;
+  border-radius: 0;
+  color: white;
+}
+
+/* Main Content */
+h3,
+h4,
+h5,
+h6 {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+p {
+  color: #e0e0e0;
+}
+
+/* Cards */
+.card {
+  background-color: #1e1e1e;
+  border: 2px solid #ffc107;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 12px rgba(255, 193, 7, 0.2);
+  color: white;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card h5,
+.card h6 {
+  font-weight: 600;
+  color: #ffc107;
+}
+
+.card p {
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
+/* Gradient Brand Text */
+.gradient-text {
+  background: linear-gradient(to right, #ffffff, #fcd34d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+/* Small Cards (Weight, Height, Age) */
+.small-card .card-body {
+  padding: 0.5rem;
+  font-size: 0.65rem;
+  text-align: center;
+}
+
+/* General */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #121212;
+  margin: 0;
+  padding: 0;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar-left {
+  background-color: #1e1e1e;
+  border-right: 1px solid #333;
+}
+
+.sidebar-left .nav-link {
+  color: #ccc;
+}
+
+.sidebar-left .nav-link:hover {
+  color: #ffc107;
+}
+
+/* Right Sidebar */
+.sidebar-right {
+  background-color: #1e1e1e;
+  border-left: 1px solid #333;
+  color: white;
+}
+
+/* Cards */
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.1);
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title,
+h3,
+h4,
+h5 {
+  color: #ffc107;
+}
+
+.card-text {
+  color: #ccc;
+}
+
+/* To-Do Section */
+.todo-list {
+  background-color: #1e1e1e;
+  border: 1px solid #ffc107;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.todo-list label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.todo-list input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

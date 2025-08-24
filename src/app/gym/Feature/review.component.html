@@ -1,0 +1,86 @@
+<div class="container mt-5">
+  <form
+    class="p-4 rounded shadow"
+    style="
+      background-color: #121212;
+      border: 2px solid #ffc107;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+      color: white;
+    "
+  >
+    <h3 class="text-center mb-4" style="color: #ffc107">
+      <i class="fas fa-credit-card me-2"></i>Payment Details
+    </h3>
+
+    <!-- Cardholder Name -->
+    <div class="form-group mb-3">
+      <label for="cardName" class="form-label text-warning">
+        <i class="fas fa-user me-1"></i>Cardholder Name
+      </label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        id="cardName"
+        placeholder="John Doe"
+        required
+      />
+    </div>
+
+    <!-- Card Number -->
+    <div class="form-group mb-3">
+      <label for="cardNumber" class="form-label text-warning">
+        <i class="fas fa-credit-card me-1"></i>Card Number
+      </label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        id="cardNumber"
+        placeholder="1234 5678 9012 3456"
+        maxlength="19"
+        required
+      />
+    </div>
+
+    <div class="row">
+      <!-- Expiry Date -->
+      <div class="col-md-6 mb-3">
+        <label for="expiry" class="form-label text-warning">
+          <i class="fas fa-calendar-alt me-1"></i>Expiry Date
+        </label>
+        <input
+          type="text"
+          class="form-control bg-dark text-white border-warning"
+          id="expiry"
+          placeholder="MM/YY"
+          required
+        />
+      </div>
+
+      <!-- CVV -->
+      <div class="col-md-6 mb-3">
+        <label for="cvv" class="form-label text-warning">
+          <i class="fas fa-lock me-1"></i>CVV
+        </label>
+        <input
+          type="password"
+          class="form-control bg-dark text-white border-warning"
+          id="cvv"
+          placeholder="123"
+          maxlength="4"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Action Button -->
+    <div class="d-flex justify-content-center mt-4">
+      <button
+        type="submit"
+        class="btn btn-warning text-dark w-100"
+        (click)="savePlan()"
+      >
+        <i class="fas fa-money-check-alt me-2"></i>Pay Now
+      </button>
+    </div>
+  </form>
+</div>

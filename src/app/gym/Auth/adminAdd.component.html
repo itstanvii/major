@@ -1,0 +1,129 @@
+<div class="container mt-5">
+  <form
+    (ngSubmit)="saveProduct()"
+    #form="ngForm"
+    class="p-4 rounded shadow"
+    style="
+      background-color: #121212;
+      border: 2px solid #ffc107;
+      box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+      color: white;
+    "
+  >
+    <h3 class="text-center mb-4" style="color: #ffc107">Add New Gym Product</h3>
+
+    <div class="form-group mb-3">
+      <label class="form-label text-warning">Item Name</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        [(ngModel)]="newProduct.itemName"
+        name="itemName"
+        required
+        placeholder="Enter product name"
+        #itemName="ngModel"
+      />
+      <div *ngIf="itemName.invalid && itemName.touched" class="text-danger">
+        Item name is required.
+      </div>
+    </div>
+
+    <!-- Category Dropdown -->
+    <div class="form-group mb-3">
+      <label class="form-label text-warning">Category</label>
+      <select
+        class="form-control bg-dark text-white border-warning"
+        [(ngModel)]="newProduct.category"
+        name="category"
+        required
+        #category="ngModel"
+        style="
+          border-width: 2px;
+          box-shadow: inset 0 0 5px rgba(255, 193, 7, 0.3);
+        "
+      >
+        <option value="" disabled selected hidden>Select a category</option>
+        <option value="Clothes">Clothes</option>
+        <option value="Power Intake">Power Intake</option>
+        <option value="Weights">Weights</option>
+        <option value="Accessories">Accessories</option>
+      </select>
+      <div
+        *ngIf="category.invalid && category.touched"
+        class="text-danger mt-1"
+      >
+        Category is required.
+      </div>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group mb-3">
+      <label class="form-label text-warning">Description</label>
+      <textarea
+        class="form-control bg-dark text-white border-warning"
+        [(ngModel)]="newProduct.description"
+        name="description"
+        required
+        placeholder="Enter product description"
+        #description="ngModel"
+      ></textarea>
+      <div
+        *ngIf="description.invalid && description.touched"
+        class="text-danger"
+      >
+        Description is required.
+      </div>
+    </div>
+
+    <!-- Image URL -->
+    <div class="form-group mb-3">
+      <label class="form-label text-warning">Image URL</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        [(ngModel)]="newProduct.src"
+        name="src"
+        required
+        placeholder="Enter image URL"
+        #src="ngModel"
+      />
+      <div *ngIf="src.invalid && src.touched" class="text-danger">
+        Image URL is required.
+      </div>
+    </div>
+
+    <!-- Price -->
+    <div class="form-group mb-4">
+      <label class="form-label text-warning">Price</label>
+      <input
+        type="text"
+        class="form-control bg-dark text-white border-warning"
+        [(ngModel)]="newProduct.price"
+        name="price"
+        required
+        placeholder="Enter price"
+        #price="ngModel"
+      />
+      <div *ngIf="price.invalid && price.touched" class="text-danger">
+        Price is required.
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap mt-4">
+      <button
+        type="submit"
+        class="btn btn-warning text-dark m-2"
+        [disabled]="form.invalid"
+      >
+        Add Product
+      </button>
+      <button
+        type="button"
+        class="btn btn-warning text-dark m-2"
+        routerLink="/auth/admin"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+</div>

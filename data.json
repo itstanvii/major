@@ -1,0 +1,410 @@
+{
+  "user": [
+    {
+      "name": "Tanvi",
+      "email": "tanvi@gmail.com",
+      "age": 21,
+      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
+      "password": "123456",
+      "category": "weightGain",
+      "height": 1.5,
+      "weight": 50,
+      "id": 1,
+      "cart": []
+    },
+    {
+      "name": "Yash",
+      "email": "yashkawtikwar1@gmail.com",
+      "password": "123456",
+      "age": 21,
+      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
+      "height": 1.5,
+      "weight": 50,
+      "category": "weightGain",
+      "id": 2,
+      "cart": []
+    },
+    {
+      "name": "Mukesh",
+      "email": "mukesh@gmail.com",
+      "password": "123456",
+      "age": 40,
+      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
+      "height": 1.5,
+      "weight": 50,
+      "category": "weightLoss",
+      "id": 3
+    }
+  ],
+  "trainer": [
+    {
+      "id": "5c42",
+      "name": "Bhagat Singh",
+      "email": "xyz@gmail.com",
+      "password": "123456",
+      "experience": 4,
+      "certifications": 2,
+      "specialization": "weightGain"
+    },
+    {
+      "id": "e715",
+      "name": "Mahatma Gandhi",
+      "email": "gandhi@gmail.com",
+      "password": "123456",
+      "experience": 10,
+      "certifications": 5,
+      "specialization": "weightLoss"
+    },
+    {
+      "name": "Eddy",
+      "email": "eddy@gmail.com",
+      "password": "123456",
+      "experience": 2,
+      "certifications": 3,
+      "specialization": "weightLoss",
+      "id": "jtKegn3"
+    }
+  ],
+  "login": [],
+  "orders": [
+    {
+      "orderId": "1755867101186",
+      "id": 2,
+      "name": "Yash",
+      "email": "yashkawtikwar1@gmail.com",
+      "address": "india",
+      "cart": [
+        {
+          "productId": "14",
+          "quantity": 1
+        },
+        {
+          "productId": "15",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "7",
+      "itemName": "Gym T-Shirt",
+      "category": "Clothes",
+      "description": "Sweat-wicking and breathable workout tee.",
+      "src": "assets/images/c1.jpeg",
+      "price": 799
+    },
+    {
+      "id": "8",
+      "itemName": "Compression Shorts",
+      "category": "Clothes",
+      "description": "Supports muscles and improves circulation.",
+      "src": "assets/images/c2.webp",
+      "price": 999
+    },
+    {
+      "id": "11",
+      "itemName": "Gym Gloves",
+      "category": "Clothes",
+      "description": "Protects hands and improves grip during lifts.",
+      "src": "assets/images/c5.webp",
+      "price": 499
+    },
+    {
+      "id": "12",
+      "itemName": "Sweatband Set",
+      "category": "Clothes",
+      "description": "Absorbs sweat and keeps you dry during workouts.",
+      "src": "assets/images/c6.webp",
+      "price": 349
+    },
+    {
+      "id": "13",
+      "itemName": "Protein Bar",
+      "category": "Power Intake",
+      "description": "20g protein snack for post-workout recovery.",
+      "src": "assets/images/f1.webp",
+      "price": 199
+    },
+    {
+      "id": "14",
+      "itemName": "Pre-Workout Drink",
+      "category": "Power Intake",
+      "description": "Boosts energy and focus before training.",
+      "src": "assets/images/f2.webp",
+      "price": 249
+    },
+    {
+      "id": "15",
+      "itemName": "Post-Workout Shake",
+      "category": "Power Intake",
+      "description": "Refuels muscles and aids recovery.",
+      "src": "assets/images/f3.webp",
+      "price": 299
+    },
+    {
+      "id": "16",
+      "itemName": "Energy Gel",
+      "category": "Power Intake",
+      "description": "Quick energy boost during endurance workouts.",
+      "src": "assets/images/f4.webp",
+      "price": 149
+    },
+    {
+      "id": "17",
+      "itemName": "Hydration Tablets",
+      "category": "Power Intake",
+      "description": "Replenishes electrolytes after intense sessions.",
+      "src": "assets/images/f5.webp",
+      "price": 199
+    },
+    {
+      "id": "18",
+      "itemName": "Mass Gainer",
+      "category": "Power Intake",
+      "description": "High-calorie supplement for muscle growth.",
+      "src": "assets/images/f6.webp",
+      "price": 899
+    },
+    {
+      "id": "19",
+      "itemName": "Protein Bar",
+      "category": "Power Intake",
+      "description": "20g protein snack for post-workout recovery.",
+      "src": "assets/images/f1.webp",
+      "price": 199
+    },
+    {
+      "id": "20",
+      "itemName": "Pre-Workout Drink",
+      "category": "Power Intake",
+      "description": "Boosts energy and focus before training.",
+      "src": "assets/images/f2.webp",
+      "price": 249
+    },
+    {
+      "id": "21",
+      "itemName": "Post-Workout Shake",
+      "category": "Power Intake",
+      "description": "Refuels muscles and aids recovery.",
+      "src": "assets/images/f3.webp",
+      "price": 299
+    },
+    {
+      "id": "22",
+      "itemName": "Energy Gel",
+      "category": "Power Intake",
+      "description": "Quick energy boost during endurance workouts.",
+      "src": "assets/images/f4.webp",
+      "price": 149
+    },
+    {
+      "id": "23",
+      "itemName": "Hydration Tablets",
+      "category": "Power Intake",
+      "description": "Replenishes electrolytes after intense sessions.",
+      "src": "assets/images/f5.webp",
+      "price": 199
+    },
+    {
+      "id": "24",
+      "itemName": "Mass Gainer",
+      "category": "Power Intake",
+      "description": "High-calorie supplement for muscle growth.",
+      "src": "assets/images/f6.webp",
+      "price": 899
+    },
+    {
+      "id": "25",
+      "itemName": "Adjustable Dumbbells",
+      "category": "Weights",
+      "description": "Compact dumbbells with quick-lock system.",
+      "src": "assets/images/w1.webp",
+      "price": 3499
+    },
+    {
+      "id": "26",
+      "itemName": "Kettlebell Set",
+      "category": "Weights",
+      "description": "Ideal for swings, squats, and presses.",
+      "src": "assets/images/w2.webp",
+      "price": 2999
+    },
+    {
+      "id": "27",
+      "itemName": "Barbell Kit",
+      "category": "Weights",
+      "description": "Olympic barbell with weight plates.",
+      "src": "assets/images/w3.webp",
+      "price": 4999
+    },
+    {
+      "id": "28",
+      "itemName": "Weight Plates",
+      "category": "Weights",
+      "description": "Rubber-coated plates for safe lifting.",
+      "src": "assets/images/w4.webp",
+      "price": 1999
+    },
+    {
+      "id": "29",
+      "itemName": "Ankle Weights",
+      "category": "Weights",
+      "description": "Adds resistance to lower body exercises.",
+      "src": "assets/images/w5.webp",
+      "price": 899
+    },
+    {
+      "id": "30",
+      "itemName": "Weighted Vest",
+      "category": "Weights",
+      "description": "Boosts intensity for bodyweight workouts.",
+      "src": "assets/images/w6.webp",
+      "price": 2499
+    },
+    {
+      "id": "31",
+      "itemName": "Adjustable Dumbbells",
+      "category": "Weights",
+      "description": "Compact dumbbells with quick-lock system.",
+      "src": "assets/images/w1.webp",
+      "price": 3499
+    },
+    {
+      "id": "32",
+      "itemName": "Kettlebell Set",
+      "category": "Weights",
+      "description": "Ideal for swings, squats, and presses.",
+      "src": "assets/images/w2.webp",
+      "price": 2999
+    },
+    {
+      "id": "33",
+      "itemName": "Barbell Kit",
+      "category": "Weights",
+      "description": "Olympic barbell with weight plates.",
+      "src": "assets/images/w3.webp",
+      "price": 4999
+    },
+    {
+      "id": "34",
+      "itemName": "Weight Plates",
+      "category": "Weights",
+      "description": "Rubber-coated plates for safe lifting.",
+      "src": "assets/images/w4.webp",
+      "price": 1999
+    },
+    {
+      "id": "35",
+      "itemName": "Ankle Weights",
+      "category": "Weights",
+      "description": "Adds resistance to lower body exercises.",
+      "src": "assets/images/w5.webp",
+      "price": 899
+    },
+    {
+      "id": "36",
+      "itemName": "Weighted Vest",
+      "category": "Weights",
+      "description": "Boosts intensity for bodyweight workouts.",
+      "src": "assets/images/w6.webp",
+      "price": 2499
+    },
+    {
+      "id": "37",
+      "itemName": "Yoga Mat",
+      "category": "Accessories",
+      "description": "Non-slip mat with extra cushioning.",
+      "src": "assets/images/a11.webp",
+      "price": 999
+    },
+    {
+      "id": "38",
+      "itemName": "Resistance Bands",
+      "category": "Accessories",
+      "description": "Great for mobility and strength training.",
+      "src": "assets/images/a2.webp",
+      "price": 599
+    },
+    {
+      "id": "39",
+      "itemName": "Foam Roller",
+      "category": "Accessories",
+      "description": "Relieves muscle tension and improves recovery.",
+      "src": "assets/images/a3.webp",
+      "price": 799
+    },
+    {
+      "id": "40",
+      "itemName": "Gym Bag",
+      "category": "Accessories",
+      "description": "Spacious and durable bag for all gym essentials.",
+      "src": "assets/images/a4.webp",
+      "price": 1299
+    },
+    {
+      "id": "41",
+      "itemName": "Water Bottle",
+      "category": "Accessories",
+      "description": "Leak-proof bottle with hydration tracker.",
+      "src": "assets/images/a5.webp",
+      "price": 399
+    },
+    {
+      "id": "42",
+      "itemName": "Smartwatch",
+      "category": "Accessories",
+      "description": "Tracks workouts and health metrics in real time.",
+      "src": "assets/images/a6.webp",
+      "price": 4999
+    },
+    {
+      "id": "43",
+      "itemName": "Yoga Mat",
+      "category": "Accessories",
+      "description": "Non-slip mat with extra cushioning.",
+      "src": "assets/images/a11.webp",
+      "price": 999
+    },
+    {
+      "id": "44",
+      "itemName": "Resistance Bands",
+      "category": "Accessories",
+      "description": "Great for mobility and strength training.",
+      "src": "assets/images/a2.webp",
+      "price": 599
+    },
+    {
+      "id": "45",
+      "itemName": "Foam Roller",
+      "category": "Accessories",
+      "description": "Relieves muscle tension and improves recovery.",
+      "src": "assets/images/a3.webp",
+      "price": 799
+    },
+    {
+      "id": "46",
+      "itemName": "Gym Bag",
+      "category": "Accessories",
+      "description": "Spacious and durable bag for all gym essentials.",
+      "src": "assets/images/a4.webp",
+      "price": 1299
+    },
+    {
+      "id": "47",
+      "itemName": "Water Bottle",
+      "category": "Accessories",
+      "description": "Leak-proof bottle with hydration tracker.",
+      "src": "assets/images/a5.webp",
+      "price": 399
+    },
+    {
+      "id": "48",
+      "itemName": "Smartwatch",
+      "category": "Accessories",
+      "description": "Tracks workouts and health metrics in real time.",
+      "src": "assets/images/a6.webp",
+      "price": 4999
+    }
+  ]
+}

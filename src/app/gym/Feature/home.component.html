@@ -1,0 +1,149 @@
+<!-- Navigation Bar -->
+
+<!-- Hero Section with Bootstrap Overlay -->
+
+<section class="hero-section">
+  <!-- Overlay -->
+  <div class="hero-overlay"></div>
+
+  <!-- Centered Content -->
+  <div class="hero-content text-center">
+    <h1 class="hero-heading">
+      Welcome to <span class="highlight">FitVerse</span>
+    </h1>
+    <p class="hero-subheading">
+      Unleash your potential. Train like never before.
+    </p>
+  </div>
+</section>
+
+<!-- Plans Section -->
+<section class="plans-section py-5">
+  <div class="container">
+    <app-view-plans></app-view-plans>
+  </div>
+</section>
+
+<section class="bmi-section">
+  <!-- Overlay -->
+  <div class="bmi-overlay"></div>
+
+  <!-- Content -->
+  <div class="container position-relative z-2">
+    <div class="row justify-content-end">
+      <div class="col-md-6 text-white text-end p-5">
+        <h2 class="display-5 fw-bold text-warning mb-3">Know Your BMI</h2>
+        <p class="fs-5 text-light">
+          Understand your body better with our BMI calculator. It's the first
+          step toward setting realistic fitness goals and living a healthier
+          life.
+        </p>
+        <a
+          routerLink="/bmiCalculator"
+          class="btn btn-warning btn-lg fw-bold mt-3"
+          >Calculate Now</a
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="position-relative d-flex align-items-center text-white"
+  style="
+    background-image: url('assets/images/store_home.jpg');
+    height: 400px;
+    background-size: cover;
+    background-position: right center;
+  "
+>
+  <!-- Full-section dark overlay -->
+  <div
+    class="position-absolute top-0 start-0 w-100 h-100"
+    style="background-color: rgba(0, 0, 0, 0.6); z-index: 1"
+  ></div>
+
+  <!-- Content Row -->
+  <div class="container position-relative" style="z-index: 2">
+    <div class="row align-items-center">
+      <!-- Left Content -->
+      <div class="col-md-6">
+        <h2
+          class="fw-bold text-warning text-glow mb-3"
+          style="text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.3)"
+        >
+          Transform Your Workout
+        </h2>
+        <p class="text-light fs-5 text-glow">
+          Discover premium gym gear, supplements, and accessories tailored for
+          every fitness goal. Whether you're bulking, cutting, or just starting
+          out — we've got you covered.
+        </p>
+        <a
+          routerLink="/store"
+          class="btn btn-warning fw-bold shadow-sm custom-hover mt-3"
+          style="
+            .custom-hover {
+              background-color: #ffc107; /* Slightly brighter yellow */
+              color: #000;
+              box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+              transform: scale(1.05);
+              transition: all 0.3s ease;
+            }
+          "
+          >Explore Store</a
+        >
+      </div>
+
+      <!-- Right Side (empty, background image shows here) -->
+      <div class="col-md-6"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer Section for Trainer Hiring -->
+<footer class="footer-section" *ngIf="func()">
+  <div class="container text-center text-md-start">
+    <div class="row text-center text-md-start">
+      <!-- About Section -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Join FitVerse</h5>
+        <p class="text-light">
+          Are you a passionate fitness trainer looking to inspire others?
+          FitVerse is hiring! Apply now and become part of a vibrant community
+          dedicated to health and wellness.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Quick Links</h5>
+        <p>
+          <a routerLink="/trainer-register" class="footer-link"
+            >Register as Trainer</a
+          >
+        </p>
+      </div>
+
+      <!-- Contact Info -->
+      <!-- Contact Info -->
+      <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mt-3">
+        <h5 class="text-uppercase mb-4 fw-bold text-warning">Contact</h5>
+        <p><i class="fas fa-envelope me-2"></i> infofitverse.com</p>
+        <p><i class="fas fa-phone me-2"></i> +91 8799979578</p>
+        <p>
+          <i class="fas fa-map-marker-alt me-2"></i> FitVerse HQ, Mumbai, India
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="row mt-4">
+      <div class="col-md-12 text-center">
+        <p class="mb-0 text-light">
+          &copy; 2025 FitVerse. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
