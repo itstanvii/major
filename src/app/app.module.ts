@@ -51,7 +51,6 @@ import { HttpInterceptorService } from '../Interceptor/httpinterceptor-service';
       {
         path: 'trainer/:id',
         component: TrainerComponent,
-        canActivate: [StoreFirstAppGuard],
       },
       {
         path: 'trainerInfo',

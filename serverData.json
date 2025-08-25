@@ -1,122 +1,137 @@
 {
   "user": [
     {
-      "name": "Tanvi",
+      "id": 1,
+      "name": "Tanvi Jain",
       "email": "tanvi@gmail.com",
-      "age": 21,
-      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
       "password": "123456",
-      "category": "weightGain",
+      "age": 21,
       "height": 1.5,
       "weight": 50,
-      "id": 1,
+      "category": "weightGain",
+      "imageUrl": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg",
       "cart": []
     },
     {
-      "name": "Yash",
+      "id": 2,
+      "name": "Yash Kawtikwar",
       "email": "yashkawtikwar1@gmail.com",
       "password": "123456",
       "age": 21,
-      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
-      "height": 1.5,
-      "weight": 50,
+      "height": 1.7,
+      "weight": 65,
       "category": "weightGain",
-      "id": 2,
-      "cart": []
+      "imageUrl": "https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg",
+      "cart": [],
+      "membership": "Premium Fit Plan",
+      "membershipExpireDate": "2025-09-24T09:38:05.478Z"
     },
     {
-      "name": "Mukesh",
+      "id": 3,
+      "name": "Mukesh Verma",
       "email": "mukesh@gmail.com",
       "password": "123456",
       "age": 40,
-      "imageUrl": "https://images.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg?cs=srgb&dl=pexels-pixabay-104827.jpg&fm=jpg",
-      "height": 1.5,
-      "weight": 50,
+      "height": 1.6,
+      "weight": 70,
       "category": "weightLoss",
-      "id": 3
+      "imageUrl": "https://images.pexels.com/photos/1704488/pexels-photo-1704488.jpeg",
+      "dietPlan": "Eat Fruits and vegeta",
+      "workoutPlan": "excercise daily"
     },
     {
-      "name": "Sanket",
-      "email": "sanket@gmail.com",
-      "password": "123456",
-      "age": 21,
-      "imageUrl": "xrtchjb",
-      "height": 1.8,
-      "weight": 60,
-      "category": "bodyBuilding",
       "id": 4,
-      "cart": [
-        {
-          "productId": "27",
-          "quantity": 1
-        }
-      ]
-    },
-    {
-      "name": "virat",
-      "email": "kohli@gmail.com",
+      "name": "Aarti Patel",
+      "email": "aarti.patel@gmail.com",
       "password": "123456",
-      "age": 35,
-      "imageUrl": "trxchg",
-      "height": 2.1,
-      "weight": 83,
-      "category": "cardio",
-      "id": 5
-    },
-    {
-      "name": "Sanket",
-      "email": "sanket@gmail.com",
-      "password": "123456",
-      "age": 21,
-      "imageUrl": "xrtchjb",
-      "height": 1.8,
+      "age": 28,
+      "height": 1.55,
       "weight": 60,
-      "category": "weightGain",
-      "id": 6
-    },
-    {
-      "name": "arpita",
-      "email": "arpita@gmail.com",
-      "password": "123456",
-      "age": 21,
-      "imageUrl": "https://t3.ftcdn.net/jpg/03/19/48/06/360_F_319480643_A23RhI94LXFX1S97y6QIZlmtwDWloS2o.jpg",
-      "height": 1.5,
-      "weight": 60,
-      "category": "yoga",
-      "id": 7
+      "category": "weightLoss",
+      "imageUrl": "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg",
+      "cart": [],
+      "dietPlan": "Eat fruits & leafy vegetables.",
+      "workoutPlan": "Exercise Daily."
     }
   ],
   "trainer": [
     {
       "id": "5c42",
-      "name": "Bhagat Singh",
-      "email": "xyz@gmail.com",
+      "name": "Kartik Singh",
+      "email": "kartik.singh@gmail.com",
       "password": "123456",
       "experience": 4,
       "certifications": 2,
-      "specialization": "weightGain"
+      "specialization": "weightGain",
+      "imageUrl": "https://thumbs.dreamstime.com/b/proud-fitness-trainer-his-gym-confident-exercise-coach-gym-indian-fit-man-arms-crossed-bodybuilding-creates-proud-263412438.jpg"
     },
     {
-      "id": "e715",
-      "name": "Mahatma Gandhi",
-      "email": "gandhi@gmail.com",
-      "password": "123456",
-      "experience": 10,
-      "certifications": 5,
-      "specialization": "weightLoss"
-    },
-    {
+      "id": "jtKegn3",
       "name": "Eddy",
       "email": "eddy@gmail.com",
       "password": "123456",
       "experience": 2,
       "certifications": 3,
       "specialization": "weightLoss",
-      "id": "jtKegn3"
+      "imageUrl": "https://images.pexels.com/photos/5327527/pexels-photo-5327527.jpeg"
+    },
+    {
+      "id": "t892",
+      "name": "Priya Sharma",
+      "email": "priya.sharma@gmail.com",
+      "password": "123456",
+      "experience": 5,
+      "certifications": 4,
+      "specialization": "cardio",
+      "imageUrl": "https://images.pexels.com/photos/3768913/pexels-photo-3768913.jpeg"
+    },
+    {
+      "id": "r239",
+      "name": "Arjun Mehta",
+      "email": "arjun.mehta@gmail.com",
+      "password": "123456",
+      "experience": 6,
+      "certifications": 3,
+      "specialization": "strength",
+      "imageUrl": "https://images.pexels.com/photos/3838381/pexels-photo-3838381.jpeg"
+    },
+    {
+      "id": "k921",
+      "name": "Sneha Kapoor",
+      "email": "sneha.kapoor@gmail.com",
+      "password": "123456",
+      "experience": 3,
+      "certifications": 2,
+      "specialization": "flexibility",
+      "imageUrl": "https://images.pexels.com/photos/4662438/pexels-photo-4662438.jpeg"
+    },
+    {
+      "id": "x001",
+      "name": "Ravi Deshmukh",
+      "email": "ravi.deshmukh@gmail.com",
+      "password": "123456",
+      "experience": 8,
+      "certifications": 6,
+      "specialization": "HIIT",
+      "imageUrl": "https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
     }
   ],
   "login": [],
-  "orders": [],
+  "orders": [
+    {
+      "orderId": "1756116013355",
+      "id": 2,
+      "name": "Yash Kawtikwar",
+      "email": "yashkawtikwar1@gmail.com",
+      "address": "pune",
+      "cart": [
+        {
+          "productId": "7",
+          "quantity": 1
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "id": "7",
@@ -181,6 +196,14 @@
       "description": "Quick energy boost during endurance workouts.",
       "src": "assets/images/f4.webp",
       "price": 149
+    },
+    {
+      "id": "17",
+      "itemName": "Hydration Tablets",
+      "category": "Power Intake",
+      "description": "Replenishes electrolytes after intense sessions.",
+      "src": "assets/images/f5.webp",
+      "price": 199
     },
     {
       "id": "18",

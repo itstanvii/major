@@ -112,7 +112,7 @@ export class RestDataSource {
         //Local Error Handling
         catchError((error) => {
           console.error('Login Error:', error.message);
-          alert('Login failed: ' + error.message); //
+
           return throwError(() => error);
         })
       );

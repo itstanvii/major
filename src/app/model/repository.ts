@@ -18,7 +18,6 @@ export class Repository {
   order: any;
 
   constructor(private dataSource: RestDataSource) {}
-  // private products$ = this.dataSource.getProducts().pipe(shareReplay(1));
 
   getAllUsers(): Observable<User[]> {
     // console.log(this.dataSource.getProducts());

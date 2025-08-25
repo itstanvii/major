@@ -46,8 +46,6 @@ export class LoginComponent {
 
   constructor(private repositoy: Repository, private router: Router) {}
   handleUserLogin(data: { email: string; password: string }) {
-    console.log('User Login:', data);
-    // Add your login logic here
     this.repositoy.getAllUsers().subscribe((users) => {
       const user = users.find(
         (t) => t.email === data.email && t.password === data.password

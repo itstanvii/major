@@ -54,13 +54,13 @@
             <button class="btn btn-success btn-sm" (click)="savePlan(user)">
               Save Plan
             </button>
-            <div *ngIf="message" class="mt-2 text-danger text-center">
-              {{ message }}
-            </div>
           </td>
         </tr>
       </tbody>
     </table>
+    <div *ngIf="message" class="mt-2 text-danger text-center">
+      {{ message }}
+    </div>
   </div>
 
   <!-- Logout Button -->

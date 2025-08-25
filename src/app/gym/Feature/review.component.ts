@@ -9,32 +9,72 @@ import { User } from '../../model/user.model';
 })
 export class ReviewComponent {
   user: User = new User();
-  plan: any;
-  user1: any;
-  userId: any;
+
+  // form fields
+  cardName: string = '';
+  cardNumber: string = '';
+  expiry: string = '';
+  cvv: string = '';
+
+  // error messages
+  cardNameError: string = '';
+  cardNumberError: string = '';
+  expiryError: string = '';
+  cvvError: string = '';
+  generalError: string = '';
+  successMessage: string = '';
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private repo: Repository
   ) {}
 
-  savePlan() {
+  savePlan(event?: Event) {
+    if (event) event.preventDefault();
+
+    // Reset messages
+    this.cardNameError = '';
+    this.cardNumberError = '';
+    this.expiryError = '';
+    this.cvvError = '';
+    this.generalError = '';
+    this.successMessage = '';
+
+    // Basic validations
+    if (!this.cardName.trim())
+      this.cardNameError = 'Cardholder name is required.';
+    if (!/^\d{16}$/.test(this.cardNumber.replace(/\s+/g, '')))
+      this.cardNumberError = 'Enter a valid 16-digit card number.';
+    if (!/^\d{2}\/\d{2}$/.test(this.expiry))
+      this.expiryError = 'Enter expiry in MM/YY format.';
+    if (!/^\d{3,4}$/.test(this.cvv))
+      this.cvvError = 'CVV must be 3 or 4 digits.';
+
+    if (
+      this.cardNameError ||
+      this.cardNumberError ||
+      this.expiryError ||
+      this.cvvError
+    ) {
+      return; // stop if validation failed
+    }
+
     const selectedPlan = this.route.snapshot.paramMap.get('title');
     if (!selectedPlan) {
-      alert('No plan selected.');
+      this.generalError = 'No plan selected.';
       return;
     }
 
     const userString = localStorage.getItem('logged');
     if (!userString) {
-      alert('No user is logged in.');
+      this.generalError = 'No user is logged in.';
       return;
     }
 
     const user = JSON.parse(userString);
     if (!user.id) {
-      console.error('User ID is missing:', user);
-      alert('Cannot save plan: user ID is missing.');
+      this.generalError = 'Cannot save plan: user ID is missing.';
       return;
     }
 
@@ -51,13 +91,13 @@ export class ReviewComponent {
 
     this.repo.updateUser(updatedUser.id, updatedUser).subscribe({
       next: () => {
-        alert(`Plan saved for ${updatedUser.name}`);
+        localStorage.setItem('logged', JSON.stringify(updatedUser));
+        this.successMessage = `Plan saved for ${updatedUser.name}`;
+        setTimeout(() => this.router.navigate(['/home']), 2000);
       },
-      error: (err) => {
-        console.error('Error updating user:', err);
-        alert('Failed to save plan. Please try again.');
+      error: () => {
+        this.generalError = 'Failed to save plan. Please try again.';
       },
     });
-    this.router.navigate(['/home']);
   }
 }

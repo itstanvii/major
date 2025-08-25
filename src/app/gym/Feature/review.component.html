@@ -1,86 +1,97 @@
-<div class="container mt-5">
-  <form
-    class="p-4 rounded shadow"
-    style="
-      background-color: #121212;
-      border: 2px solid #ffc107;
-      box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
-      color: white;
-    "
-  >
-    <h3 class="text-center mb-4" style="color: #ffc107">
-      <i class="fas fa-credit-card me-2"></i>Payment Details
-    </h3>
+<div
+  class="card shadow-sm my-5 mx-auto"
+  style="
+    max-width: 30rem;
+    background-color: black;
+    border: 2px solid #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.7);
+  "
+>
+  <form class="p-4" (ngSubmit)="savePlan($event)" style="color: white">
+    <h4 class="mb-4 text-center" style="color: #ffc107">Payment Details</h4>
 
     <!-- Cardholder Name -->
-    <div class="form-group mb-3">
-      <label for="cardName" class="form-label text-warning">
-        <i class="fas fa-user me-1"></i>Cardholder Name
-      </label>
+    <div class="mb-3">
+      <label for="cardName" class="form-label">Cardholder Name</label>
       <input
         type="text"
         class="form-control bg-dark text-white border-warning"
         id="cardName"
+        [(ngModel)]="cardName"
+        name="cardName"
         placeholder="John Doe"
         required
       />
+      <div *ngIf="cardNameError" class="text-danger mt-1">
+        {{ cardNameError }}
+      </div>
     </div>
 
     <!-- Card Number -->
-    <div class="form-group mb-3">
-      <label for="cardNumber" class="form-label text-warning">
-        <i class="fas fa-credit-card me-1"></i>Card Number
-      </label>
+    <div class="mb-3">
+      <label for="cardNumber" class="form-label">Card Number</label>
       <input
         type="text"
         class="form-control bg-dark text-white border-warning"
         id="cardNumber"
+        [(ngModel)]="cardNumber"
+        name="cardNumber"
         placeholder="1234 5678 9012 3456"
         maxlength="19"
         required
       />
+      <div *ngIf="cardNumberError" class="text-danger mt-1">
+        {{ cardNumberError }}
+      </div>
     </div>
 
+    <!-- Expiry & CVV -->
     <div class="row">
-      <!-- Expiry Date -->
       <div class="col-md-6 mb-3">
-        <label for="expiry" class="form-label text-warning">
-          <i class="fas fa-calendar-alt me-1"></i>Expiry Date
-        </label>
+        <label for="expiry" class="form-label">Expiry Date</label>
         <input
           type="text"
           class="form-control bg-dark text-white border-warning"
           id="expiry"
+          [(ngModel)]="expiry"
+          name="expiry"
           placeholder="MM/YY"
           required
         />
+        <div *ngIf="expiryError" class="text-danger mt-1">
+          {{ expiryError }}
+        </div>
       </div>
 
-      <!-- CVV -->
       <div class="col-md-6 mb-3">
-        <label for="cvv" class="form-label text-warning">
-          <i class="fas fa-lock me-1"></i>CVV
-        </label>
+        <label for="cvv" class="form-label">CVV</label>
         <input
           type="password"
           class="form-control bg-dark text-white border-warning"
           id="cvv"
+          [(ngModel)]="cvv"
+          name="cvv"
           placeholder="123"
           maxlength="4"
           required
         />
+        <div *ngIf="cvvError" class="text-danger mt-1">{{ cvvError }}</div>
       </div>
     </div>
 
-    <!-- Action Button -->
-    <div class="d-flex justify-content-center mt-4">
-      <button
-        type="submit"
-        class="btn btn-warning text-dark w-100"
-        (click)="savePlan()"
-      >
-        <i class="fas fa-money-check-alt me-2"></i>Pay Now
-      </button>
+    <!-- General error -->
+    <div *ngIf="generalError" class="text-danger mb-2">{{ generalError }}</div>
+
+    <!-- Success message -->
+    <div *ngIf="successMessage" class="text-success mb-2">
+      {{ successMessage }}
     </div>
+
+    <button
+      type="submit"
+      class="btn btn-warning text-black w-100 mt-3 fw-bold rounded-pill"
+    >
+      Pay Now
+    </button>
   </form>
 </div>

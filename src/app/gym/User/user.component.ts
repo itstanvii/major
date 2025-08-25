@@ -10,7 +10,7 @@ import { CalendarMonthViewDay } from 'angular-calendar';
 // import { Injectable } from '@angular/core';
 
 // @Injectable({
-//   providedIn: 'root',
+// providedIn: 'root',
 // })
 @Component({
   selector: 'user',
@@ -30,11 +30,36 @@ export class UserComponent implements OnInit {
     private router: Router
   ) {}
   ngOnInit(): void {
+    // Get user ID from route parameter
     this.userId = this.route.snapshot.paramMap.get('id')!;
 
-    this.repo.getAllUsers().subscribe((data) => {
-      this.userData = data.find((u) => u && u.id === this.userId);
-    });
+    // Try to get user data from localStorage first
+    const loggedUserString = localStorage.getItem('logged');
+    if (loggedUserString && loggedUserString !== '') {
+      try {
+        this.userData = JSON.parse(loggedUserString);
+        console.log('User data from localStorage:', this.userData);
+      } catch (error) {
+        console.error('Error parsing user data from localStorage:', error);
+      }
+    }
+
+    // If user data not found in localStorage or ID doesn't match, fetch from API
+    if (!this.userData || String(this.userData.id) !== this.userId) {
+      this.repo.getAllUsers().subscribe((data) => {
+        // Convert IDs to strings for comparison to handle numeric vs string IDs
+        this.userData = data.find(
+          (u) => u && String(u.id) === String(this.userId)
+        );
+        console.log('User data from API:', this.userData);
+
+        // Update localStorage with the latest user data
+        if (this.userData) {
+          localStorage.setItem('logged', JSON.stringify(this.userData));
+        }
+      });
+    }
+
     this.repo.getAllTrainers().subscribe((data: Trainer[]) => {
       this.trainers = data.slice(0, 2);
     });

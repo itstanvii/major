@@ -13,7 +13,9 @@ export class TrainerComponent implements OnInit {
   trainerId!: string;
   trainerData: any;
   userData: any;
+
   message: string = '';
+  messageClass: string = 'alert-success';
   constructor(
     private route: ActivatedRoute,
     private repo: Repository,
@@ -43,6 +45,16 @@ export class TrainerComponent implements OnInit {
     localStorage.setItem('loggedTrainer', '');
     this.router.navigate(['/home']);
   }
+  // save(form: NgForm) {
+  //   if (form.valid) {
+  //     // Save logic here (e.g., POST to json-server)
+  //     this.repo.saveUser(this.user);
+  //     this.router.navigate(['/home']);
+  //     console.log('Trainer saved:', this.user);
+  //   } else {
+  //     console.log('Form is invalid');
+  //   }
+  // }
 
   savePlan(user: any) {
     const updatedUser = {
@@ -51,9 +63,15 @@ export class TrainerComponent implements OnInit {
       workoutPlan: user.workoutPlan,
     };
 
-    this.repo.updateUser(updatedUser.id, updatedUser).subscribe(() => {
-      alert(`Plan saved for ${updatedUser.name}`);
-      // Optionally show a toast or alert
-    });
+    this.message = `✅ Plan saved successfully for ${user.name}`;
+    this.messageClass = 'alert alert-success';
+
+    setTimeout(() => (this.message = ''), 3000);
+    this.repo.updateUser(updatedUser.id, updatedUser).subscribe(() => {});
+  }
+  showMessage() {
+    // this.message = `✅ Plan saved successfully for ${updatedUser.name}`;
+    this.messageClass = 'alert alert-success';
+    setTimeout(() => (this.message = ''), 3000);
   }
 }
